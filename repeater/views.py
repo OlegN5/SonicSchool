@@ -15,4 +15,4 @@ def get_recorded_audio(request):
         file.write(audio_file)
     messages.success(request, 'Файл отправлен на сервер!')
     #return render(request, 'repeater/home.html', context=context)
-    return redirect('repeater-home')
+    return redirect('home')
