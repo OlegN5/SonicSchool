@@ -1,0 +1,34 @@
+{% extends "repeater/base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="content-section">
+    <div>
+      <legend class="border-bottom mb-4">Прослушайте звук</legend>
+    </div>
+    <div class="mb-4">
+      <audio controls preload="auto">
+        <!--<source src="{% static 'repeater/sounds/{{wav}}' %}" type="audio/wav">-->
+        <source src="{% static '' %}sounds/{{wav}}" type="audio/wav">
+      </audio>
+    </div>
+    <div>
+      <legend class="border-bottom mb-2">Запишите звук</legend>
+      <button class="record-button ml-4 mt-4" id="recordButton" onclick="startRecord()"></button><span class="ml-4" id="recordMessage" hidden>Идёт запись</span>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+          <div>
+            <audio controls id="recordedAudio" hidden name="recordedAudio"></audio>
+          </div>
+        </fieldset>
+        <div class="form-group pt-3">
+            <button class="btn btn-outline-info" type="submit" onclick="sendRecord()">Отправить</button>
+        </div>
+    </form>
+{% endblock content %}
+
+{% block scripts %}
+  <script type="text/javascript" src="{% static 'js/recorder.js' %}"></script>
+{% endblock scripts %}
