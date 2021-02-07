@@ -1,0 +1,1070 @@
+<REAPER_PROJECT 0.1 "6.21/win64" 1612648881
+  UNDO_FTS 1612648881
+  RIPPLE 0
+  GROUPOVERRIDE 0 0 0
+  AUTOXFADE 1
+  ENVATTACH 1
+  POOLEDENVATTACH 0
+  MIXERUIFLAGS 11 309
+  PEAKGAIN 1
+  FEEDBACK 0
+  PANLAW 1
+  PROJOFFS 0 0 0
+  MAXPROJLEN 0 60
+  GRID 3199 8 0.5 8 1 0 0 0
+  TIMEMODE 2 2 5 25 0 5 -1
+  VIDEO_CONFIG 0 0 256
+  PANMODE 3
+  CURSOR 30.25
+  ZOOM 393.7371740855624 10944 0
+  VZOOMEX 12 64
+  USE_REC_CFG 0
+  RECMODE 1
+  SMPTESYNC 0 25 100 40 1000 300 0 0 1 0 0
+  LOOP 1
+  LOOPGRAN 0 4
+  RECORD_PATH "audio" ""
+  <RECORD_CFG
+    ZXZhdxgAAA==
+  >
+  <APPLYFX_CFG
+  >
+  RENDER_FILE ""
+  RENDER_PATTERN a_$filenumber[N]
+  RENDER_FMT 0 1 44100
+  RENDER_1X 0
+  RENDER_RANGE 4 0 0 2 1000
+  RENDER_RESAMPLE 3 0 1
+  RENDER_ADDTOPROJ 0
+  RENDER_STEMS 32
+  RENDER_DITHER 0
+  TIMELOCKMODE 0
+  TEMPOENVLOCKMODE 1
+  ITEMMIX 0
+  DEFPITCHMODE 720896 1
+  MISCOPTS 2
+  TAKELANE 0
+  SAMPLERATE 44100 0 0
+  <RENDER_CFG
+    ZXZhdxABAA==
+  >
+  LOCK 1
+  <METRONOME 4 2
+    VOL 0.25 0.125
+    FREQ 800 1600 1
+    BEATLEN 4
+    SAMPLES "" ""
+    PATTERN 2863311530 2863311529
+  >
+  GLOBAL_AUTO -1
+  TEMPO 120 4 4
+  PLAYRATE 1 0 0.25 4
+  SELECTION 28.30429953504887 31
+  SELECTION2 28.30429953504887 31
+  MASTERAUTOMODE 0
+  MASTERTRACKHEIGHT 0 0
+  MASTERPEAKCOL 16576
+  MASTERMUTESOLO 0
+  MASTERTRACKVIEW 0 0.6667 0.5 0.5 0 -1 0 0 0 0 -1 -1 0
+  MASTERHWOUT 0 0 1 0 0 0 0 -1
+  MASTER_NCH 2 2
+  MASTER_VOLUME 1 0 -1 -1 1
+  MASTER_FX 1
+  MASTER_SEL 0
+  <MASTERPLAYSPEEDENV
+    EGUID {CDD67D63-C5DC-0A46-A5D1-DBA884FB6E9D}
+    ACT 0 -1
+    VIS 0 1 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 0 -1 -1
+  >
+  <TEMPOENVEX
+    EGUID {3489039D-A871-E34E-82A0-253182DAFFF8}
+    ACT 0 -1
+    VIS 1 0 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 1 -1 -1
+  >
+  <PROJBAY
+  >
+  <TRACK {35E7BE5B-BDA3-8549-9724-5406982728CA}
+    NAME "deleted items"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 1 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 0 0.5 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 5088 0 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {35E7BE5B-BDA3-8549-9724-5406982728CA}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 14.06582766439909
+      SNAPOFFS 0
+      LENGTH 1.02013605442177
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {F73D2972-80A3-E54B-9ECD-160D2EA94567}
+      IID 1
+      NAME 01-210206_1909.wav
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {393852BE-60A4-BF41-B386-78264080B41A}
+      RECPASS 1
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909.wav"
+      >
+    >
+    <ITEM
+      POSITION 20.25
+      SNAPOFFS 0
+      LENGTH 7.77
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0.02 0 1 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {F2C9482E-D8D9-D347-BCC0-09145AEA4CE6}
+      IID 2
+      NAME a
+      VOLPAN 1 0 1 -1
+      SOFFS 0.39079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {F9B583B9-3799-4846-8E65-F89D8753720E}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+  >
+  <TRACK {E1DD48F2-AA5A-9842-8A4B-1BDDEA98964F}
+    NAME ""
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 -1 0
+    FREEMODE 0
+    SEL 1
+    REC 1 9 0 0 0 0 0
+    VU 2
+    TRACKHEIGHT 589 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {E1DD48F2-AA5A-9842-8A4B-1BDDEA98964F}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 28
+      SNAPOFFS 0
+      LENGTH 3.02
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0.02 0 1 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 1
+      IGUID {AD092B67-2941-FF4C-B0D3-B0076519B74C}
+      IID 7
+      SPECTROGRAM 1
+      NAME a
+      VOLPAN 1 0 33.739884 -1
+      SOFFS 8.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {8C559F01-06F1-4342-9782-5AF3901157B0}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+      SPECTRAL_EDIT 8.44509318584252 2.69570046495113 1 0 0 0 22050 -1 0 0 0 1 1 0 0 0 0
+      SPECTRAL_CONFIG 1024
+      TAKE SEL
+      NAME "01-210206_1909-01 copy 001.wav"
+      TAKEVOLPAN 0 33.739884 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {E48E32F1-056C-40DB-A92B-8EE70E93828A}
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio\01-210206_1909-01 copy 001.wav"
+      >
+    >
+    <ITEM
+      POSITION 32.75
+      SNAPOFFS 0
+      LENGTH 3.27
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {489F2474-2403-034D-9962-756FD613D5FA}
+      IID 8
+      NAME a
+      VOLPAN 1 0 45.466228 -1
+      SOFFS 12.89079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {4C65C3E3-E7FA-9A48-B39C-9E113C52F45D}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 37.5
+      SNAPOFFS 0
+      LENGTH 1.27
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {FA7546F2-6ED2-0643-99D9-CE8F6AF33D37}
+      IID 9
+      NAME a
+      VOLPAN 1 0 25.78958 -1
+      SOFFS 17.64079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {B8FC7750-F811-CE46-A612-BE37F23E79A8}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 40
+      SNAPOFFS 0
+      LENGTH 3.27
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {850BAFEB-CA6B-5F49-A469-0D1974476BBD}
+      IID 10
+      NAME a
+      VOLPAN 1 0 23.636462 -1
+      SOFFS 20.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {9EFB0D22-D3E7-3A43-B765-0C3F40E43D5D}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 44.5
+      SNAPOFFS 0
+      LENGTH 2.52
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {8C1B3395-7812-B948-A993-F38CFC270960}
+      IID 11
+      NAME a
+      VOLPAN 1 0 24.811724 -1
+      SOFFS 24.64079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {7FF77AE5-7590-D842-B8B4-0D34FDC475BB}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 48
+      SNAPOFFS 0
+      LENGTH 3.52
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {3856AFDB-5AED-3443-A55A-A29F66BEA678}
+      IID 12
+      NAME a
+      VOLPAN 1 0 31.285897 -1
+      SOFFS 28.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {E7A99906-4B09-AA4C-BA38-F771F73F2764}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 52.25
+      SNAPOFFS 0
+      LENGTH 3.77
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {201D07B3-0DEF-D541-BA04-06391EE4CAC2}
+      IID 13
+      NAME a
+      VOLPAN 1 0 28.371268 -1
+      SOFFS 32.39079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {CFCF533B-EC3A-4B4C-AA6A-9B96860FE419}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 57
+      SNAPOFFS 0
+      LENGTH 2.52
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {6B490AE3-2513-0244-B7F1-38037C635FD2}
+      IID 14
+      NAME a
+      VOLPAN 1 0 25.568494 -1
+      SOFFS 37.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {D292AB30-A933-C74A-82E2-EA3C1FF3F843}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 61.25
+      SNAPOFFS 0
+      LENGTH 4.02
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {9B3F3BAF-BE6A-FB4B-A92C-C7D9949E9D2D}
+      IID 15
+      NAME a
+      VOLPAN 1 0 72.310176 -1
+      SOFFS 41.39079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {3D0DF0D8-BBD9-E540-87D8-1A4A43E79837}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 66.25
+      SNAPOFFS 0
+      LENGTH 1.27
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {E5A920BF-6D46-3149-BFE5-23AF614F2569}
+      IID 16
+      NAME a
+      VOLPAN 1 0 73.652919 -1
+      SOFFS 46.39079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {F305F0EE-8D55-5A4F-8231-6D0212F12A33}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 68
+      SNAPOFFS 0
+      LENGTH 3.27
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {30D33425-8C10-8141-BA1D-4ED89F1853DC}
+      IID 17
+      NAME a
+      VOLPAN 1 0 36.401767 -1
+      SOFFS 48.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {BE7608C9-64FF-C246-A4DD-8CE433F5E079}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 71.75
+      SNAPOFFS 0
+      LENGTH 3.52
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {AC32572B-82CD-934C-B4C5-0CCB5BEEFB02}
+      IID 18
+      NAME a
+      VOLPAN 1 0 7.884263 -1
+      SOFFS 51.89079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {A46436A4-6FA9-2B4A-9ACE-B5E1E2416ADE}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 76.25
+      SNAPOFFS 0
+      LENGTH 2.27
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {98197A99-2FD0-0141-A106-2B553A834066}
+      IID 19
+      NAME a
+      VOLPAN 1 0 13.622683 -1
+      SOFFS 56.39079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {02CE4E42-5C55-104A-8F0C-DD185F93C40E}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 79.5
+      SNAPOFFS 0
+      LENGTH 2.77
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {14F15E5E-1473-3847-80DB-CF426CC0DD3A}
+      IID 20
+      NAME a
+      VOLPAN 1 0 16.435986 -1
+      SOFFS 59.64079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {C01D3C96-E556-674E-9A16-0083CB8E6E85}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 83.5
+      SNAPOFFS 0
+      LENGTH 2.77
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {7B4FF15C-275F-984C-A733-D8D5CAD85632}
+      IID 21
+      NAME a
+      VOLPAN 1 0 19.754491 -1
+      SOFFS 63.64079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {0FABD1FB-545A-194F-8610-A2FABC4FCA67}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 88
+      SNAPOFFS 0
+      LENGTH 4.77
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {88F51AB3-D4B4-8D4D-AEEB-0F0DB4D2CF60}
+      IID 22
+      NAME a
+      VOLPAN 1 0 21.002793 -1
+      SOFFS 68.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {C23BDE1D-C0A4-8A43-9EA6-090DBFFACFA5}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 93.5
+      SNAPOFFS 0
+      LENGTH 1.27
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {B33F2523-30F4-D240-935B-B2E88F7556E5}
+      IID 23
+      NAME a
+      VOLPAN 1 0 21.355647 -1
+      SOFFS 73.64079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {F256196F-9D29-1F47-B017-8F82FF8548DD}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 95.5
+      SNAPOFFS 0
+      LENGTH 1.27
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {78AA9D4C-1D92-B146-A69A-C3E2E33B9ABA}
+      IID 24
+      NAME a
+      VOLPAN 1 0 23.571494 -1
+      SOFFS 75.64079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {D073E331-A534-4B4A-9300-450738DC9E7A}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 98
+      SNAPOFFS 0
+      LENGTH 1.52
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {1F865C42-FF1D-7749-B407-000849F5522D}
+      IID 25
+      NAME a
+      VOLPAN 1 0 14.003817 -1
+      SOFFS 78.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {70A74A77-4DF4-0E4A-B37C-C1A6E30B6C43}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 100
+      SNAPOFFS 0
+      LENGTH 2.02
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {1C41C131-054C-A044-A397-F2A01493ADDB}
+      IID 26
+      NAME a
+      VOLPAN 1 0 18.894905 -1
+      SOFFS 80.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {9B357682-8C75-4E42-BB3B-4DDCE3DC1445}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 102.75
+      SNAPOFFS 0
+      LENGTH 1.52
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {54CE8B45-831A-B44F-9626-66068E421A38}
+      IID 27
+      NAME a
+      VOLPAN 1 0 21.119973 -1
+      SOFFS 82.89079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {09ADB62F-395D-2145-AE39-A04DAE034525}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 105.25
+      SNAPOFFS 0
+      LENGTH 1.27
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {DA6D96FF-4B7F-5F45-A36D-A8B38E3CE685}
+      IID 28
+      NAME a
+      VOLPAN 1 0 22.414894 -1
+      SOFFS 85.39079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {D939F981-2DC8-C940-B6DC-8D373DCE7D8E}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 107.75
+      SNAPOFFS 0
+      LENGTH 1.52
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {DE01154C-9DE6-4640-8E8F-6A67A0AC71AB}
+      IID 29
+      NAME a
+      VOLPAN 1 0 25.083214 -1
+      SOFFS 87.89079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {4B92D5A8-5D0A-EC4E-AE38-7CC42FD82845}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 110.5
+      SNAPOFFS 0
+      LENGTH 1.52
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {2837ACEE-6D56-5B47-9319-049C9A24BCF9}
+      IID 30
+      NAME a
+      VOLPAN 1 0 30.312589 -1
+      SOFFS 90.64079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {472C0FDF-6D38-994E-9D3C-107798E49FAF}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 114.5
+      SNAPOFFS 0
+      LENGTH 3.02
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {772F9A15-97A4-5645-B9A5-282653C1E7E2}
+      IID 31
+      NAME a
+      VOLPAN 1 0 33.970847 -1
+      SOFFS 94.64079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {64BA493B-B9A9-8B41-8CBF-9ABB2EF9AC4B}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 118.25
+      SNAPOFFS 0
+      LENGTH 2.52
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {FE2E47C8-81EA-DE49-A3EC-E32881506CF4}
+      IID 32
+      NAME a
+      VOLPAN 1 0 32.74368 -1
+      SOFFS 98.39079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {013EAE89-5CCB-5744-9B55-68B99E60595B}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 121.5
+      SNAPOFFS 0
+      LENGTH 4.02
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {4C5C9B5A-5D54-384E-AF5D-87E1D032926C}
+      IID 33
+      NAME a
+      VOLPAN 1 0 37.364957 -1
+      SOFFS 101.64079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {019A0E74-4462-4346-81A9-08DD2A2FC78F}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 127
+      SNAPOFFS 0
+      LENGTH 2.02
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {AEE2BB83-8755-4A4B-908B-9A14DBD8412F}
+      IID 34
+      NAME a
+      VOLPAN 1 0 38.591525 -1
+      SOFFS 107.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {020BBD19-EE9F-0443-A235-F29B2CF0968E}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 130
+      SNAPOFFS 0
+      LENGTH 2.02
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {82452B0B-649C-424C-864A-9BA00A909F88}
+      IID 35
+      NAME a
+      VOLPAN 1 0 34.523112 -1
+      SOFFS 110.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {D3463D85-F49A-1542-BE8E-4053FB384E8D}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 132.75
+      SNAPOFFS 0
+      LENGTH 1.77
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {51F53473-D48E-B643-B211-DE2A417C5B5D}
+      IID 36
+      NAME a
+      VOLPAN 1 0 23.034597 -1
+      SOFFS 112.89079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {54312FB3-B113-C24C-AC4A-72FBB0401BEF}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 135.25
+      SNAPOFFS 0
+      LENGTH 2.52
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {F04187BF-E571-0B4A-82CF-CF4FB4FCD104}
+      IID 37
+      NAME a
+      VOLPAN 1 0 28.962723 -1
+      SOFFS 115.39079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {5E5E0A63-66EF-6744-A194-727E6102022F}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 138.75
+      SNAPOFFS 0
+      LENGTH 1.77
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {AD475F92-ABCF-0A4A-900A-32126D727542}
+      IID 38
+      NAME a
+      VOLPAN 1 0 30.542635 -1
+      SOFFS 118.89079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {51DD223E-8AB4-7A44-BF27-032EBDC55E19}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 141.5
+      SNAPOFFS 0
+      LENGTH 3.27
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {6E312783-4351-E94A-9D47-0D98FC1EDF85}
+      IID 39
+      NAME a
+      VOLPAN 1 0 25.49104 -1
+      SOFFS 121.64079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {5980797D-2127-694E-9FF0-42A30001986C}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 145.5
+      SNAPOFFS 0
+      LENGTH 1.75
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {9A4D608D-2A57-9846-94B0-452E0C0365CD}
+      IID 40
+      NAME a
+      VOLPAN 1 0 15.284525 -1
+      SOFFS 125.64079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {AE7D775E-CE09-BF42-849F-B2885ADCF098}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 149
+      SNAPOFFS 0
+      LENGTH 2.27
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {AFDF7EAF-FD1D-3F47-98A0-A4F2FCDF9589}
+      IID 41
+      NAME a
+      VOLPAN 1 0 23.875125 -1
+      SOFFS 129.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {31A6F3BA-4E7A-EB48-A650-FDE465F91FBA}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 151.5
+      SNAPOFFS 0
+      LENGTH 1.75
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {9603736D-B57C-8C4F-97AB-A3F0153EBE74}
+      IID 42
+      NAME a
+      VOLPAN 1 0 32.181511 -1
+      SOFFS 131.14079365079365
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {8C6FFABA-B289-FB49-AD45-D69DA4E71BB3}
+      RECPASS 2
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1909-01.wav"
+      >
+    >
+    <ITEM
+      POSITION 172
+      SNAPOFFS 0
+      LENGTH 92.20489795918368
+      LOOP 0
+      ALLTAKES 0
+      FADEIN 0 0.01 0 0 0 0 0
+      FADEOUT 0 0.01 0 0 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {69B71E80-39B2-8843-9BF3-CA5CC8D4ACDD}
+      IID 4
+      NAME c
+      VOLPAN 1 0 1 -1
+      SOFFS 2.00852607709751
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {C9632468-EBE1-8645-94B3-537085E3A920}
+      RECPASS 3
+      <SOURCE WAVE
+        FILE "C:\Users\b\Documents\GitHub\SonicSchool\rec_voice\audio/01-210206_1912.wav"
+      >
+    >
+  >
+  <EXTENSIONS
+    <SWSAUTOCOLOR
+      {00000000-0000-0000-0000-000000000000} 0 "" "" ""
+      {E1DD48F2-AA5A-9842-8A4B-1BDDEA98964F} 0 "" "" ""
+      {35E7BE5B-BDA3-8549-9724-5406982728CA} 0 "" "" ""
+    >
+  >
+  <EXTSTATE
+    <ARC_COUNTER_TIMER_IN_PROJ_WIN
+      PROJECT_STARTED "07.02.2021 / 0:57:20"
+      TIME_PLAY 0.099999904632568
+      TIME_SEC_AFK 241.09999990463
+      TIME_SEC_AFK_SESSION 241.09999990463
+      TIME_SEC_RESET 241.09999990463
+      TIME_SEC_SESSION 241.09999990463
+      TIME_SEC_TOTAL 241.09999990463
+    >
+  >
+>
