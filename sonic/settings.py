@@ -24,10 +24,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SONICSCHOOL_DJANGO_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG = os.environ.get('DJANGO_DEBUG_VALUE')
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1'
+    'http://sonicschool2.herokuapp.com/',
+]
 
 # Application definition
 
