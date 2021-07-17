@@ -74,8 +74,8 @@ def load_audio():
     #audio_data_user = 'test.wav'#!!!!!!!!!!!!ЭТО ПУТЬ К ЗАПИСАННОМУ ФАЙЛУ
     audio_data_user = 'rec_voice/a_02.wav' #!!!!!!!!!!ЗДЕСЬ МОИ ТЕСТОВЫЕ ФАЙЛЫ МОЖЕШЬ НА НИХ ПОСМОТРЕТЬ ДЕЙСТВИЕ!!!!!!!!
     audio_data_ton = 'repeater/static/sounds/a_-1.wav'
-    playsound(audio_data_ton)
-    playsound(audio_data_user)
+    # playsound(audio_data_ton) # пришлось комментить
+    # playsound(audio_data_user) # пришлось комментить
     y, sr = librosa.load(audio_data_ton, sr)
     y1, sr = librosa.load(audio_data_user, sr)
     return y, y1
@@ -96,16 +96,16 @@ def colorgram (y, sr):
     # не увеличиввается разрешение а почему то типа октав добавляется - - что странно
     chromagram = librosa.feature.chroma_cqt(y, sr=sr, hop_length=1024
     , n_chroma=24, bins_per_octave = 96, fmin=110, threshold = .049, n_octaves=3)
-    plt.figure(figsize=(15, 6))
+    # plt.figure(figsize=(15, 6))
 
     #librosa.display.specshow(chromagram, x_axis='time', y_axis='chroma', hop_length=hop_length
     #, cmap='coolwarm')# построение отображения цветности нот на спектре
 
-    frames = range(len(chromagram[0]))
-    t = librosa.frames_to_time(frames)
-    librosa.display.waveplot(y, sr=sr, alpha=0.4)
-    for ch in range(24):
-        plt.plot(t, chromagram[ch], color=colors[ch])
-    plt.legend(notes)
-    plt.show()#раскомментить чтобы увидеть
+    # frames = range(len(chromagram[0]))
+    # t = librosa.frames_to_time(frames)
+    # librosa.display.waveplot(y, sr=sr, alpha=0.4)
+    # for ch in range(24):
+    #     plt.plot(t, chromagram[ch], color=colors[ch])
+    # plt.legend(notes)
+    # plt.show()#раскомментить чтобы увидеть
     return chromagram
