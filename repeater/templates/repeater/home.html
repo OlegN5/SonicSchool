@@ -8,9 +8,20 @@
     </div>
     <div class="mb-4">
       <audio controls preload="auto">
-        <!--<source src="{% static 'repeater/sounds/{{wav}}' %}" type="audio/wav">-->
+        <!-- <source src="{% static 'repeater/sounds/{{wav}}' %}" type="audio/wav"> -->
         <source src="{% static '' %}sounds/{{wav}}" type="audio/wav">
+        <!-- <source src='static/sounds/{{wav}}' type="audio/wav"> -->
+        <!-- sounds/{{wav}}" type="audio/wav"> -->
+        
       </audio>
+
+<!-- 
+      <audio controls="controls">
+        <source src="do.wav" type="audio/wav">
+        Ваш браузер не поддерживает элемент <code>audio</code>.
+      </audio> -->
+
+
     </div>
     <div>
       <legend class="border-bottom mb-2">Запишите звук</legend>

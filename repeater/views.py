@@ -7,8 +7,8 @@ from . import analysis_audio
 def home(request):
     context = {
         'wav': 'a_-1.wav'
+        #'wav': 'do.wav'
     }
-
     return render(request, 'repeater/home.html', context=context)
 
 def get_recorded_audio(request):

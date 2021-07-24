@@ -31,7 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1'
-    'sonicschool2.herokuapp.com',
+    'sonicschool2.herokuapp.com'
 ]
 
 # Application definition
@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'repeater.apps.RepeaterConfig',
+    'news.apps.NewsConfig',
+    'gyms.apps.GymsConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
 ]

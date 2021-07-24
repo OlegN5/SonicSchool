@@ -4,7 +4,7 @@ import sys
 import librosa
 import librosa.display
 import matplotlib.pyplot as plt
-from playsound import playsound
+# from playsound import playsound
 
 colors = ['xkcd:purple', 'xkcd:pinkish tan', 'xkcd:spruce', 'xkcd:strong blue'
     , 'xkcd:toxic green', 'xkcd:cloudy blue', 'xkcd:dark pastel green', 'xkcd:dust'
@@ -71,8 +71,8 @@ def start():
 
 def load_audio():
     sr = 44100
-    #audio_data_user = 'test.wav'#!!!!!!!!!!!!ЭТО ПУТЬ К ЗАПИСАННОМУ ФАЙЛУ
-    audio_data_user = 'rec_voice/a_02.wav' #!!!!!!!!!!ЗДЕСЬ МОИ ТЕСТОВЫЕ ФАЙЛЫ МОЖЕШЬ НА НИХ ПОСМОТРЕТЬ ДЕЙСТВИЕ!!!!!!!!
+    audio_data_user = 'test.wav'#!!!!!!!!!!!!ЭТО ПУТЬ К ЗАПИСАННОМУ ФАЙЛУ
+    #audio_data_user = 'rec_voice/a_02.wav' #!!!!!!!!!!ЗДЕСЬ МОИ ТЕСТОВЫЕ ФАЙЛЫ МОЖЕШЬ НА НИХ ПОСМОТРЕТЬ ДЕЙСТВИЕ!!!!!!!!
     audio_data_ton = 'repeater/static/sounds/a_-1.wav'
     # playsound(audio_data_ton) # пришлось комментить
     # playsound(audio_data_user) # пришлось комментить

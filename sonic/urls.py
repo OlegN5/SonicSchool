@@ -16,21 +16,28 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from repeater import views as repeater_views
-from users import views as users_views
+# from users import views as users_views
+
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('news/', include('news.urls')),
+    path('gyms/', include('gyms.urls')),
+
     path('', repeater_views.home, name='home'),
     path('get_recorded_audio',
-    repeater_views.get_recorded_audio, name='get-recorded-audio'),
-    path('register/', users_views.register, name='register'),
-    path('login/', users_views.login, name='login'),
+        repeater_views.get_recorded_audio, name='get-recorded-audio'),
+
+    # path('register/', users_views.register, name='register'),
+    # path('login/', users_views.login, name='login'),
+    # path('profile/', users_views.profile, name='profile'),
+    path('users/', include('users.urls')),
+
     path('logout/', auth_views.LogoutView.as_view(
-    template_name='users/logout.html'), name='logout'),
-    path('profile/', users_views.profile, name='profile'),
+        template_name='users/logout.html'), name='logout'),
     path('password-reset/',
         auth_views.PasswordResetView.as_view(
             template_name='users/password_reset.html'
