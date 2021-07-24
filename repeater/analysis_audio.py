@@ -26,6 +26,7 @@ notes = ['C', 'C+', 'C#', 'C#+', 'D', 'D+', 'D#', 'D#+', 'E', 'E+'
 , 'B', 'B+', 'H', 'H+']# for n_chroma = 24
 
 def start():
+    message_2u =''
     y, y1 = load_audio()
     nota = 18# случайно выбранный звук
     cg = colorgram(y1, 44100)# !!!!!!!!!!!!!!!!!!!ЕСЛИ УБРАТЬ У ИГРЕКА ЕДИНИЦУ МОЖНО ВЫВЕСТИ ГРАФИК ЭТАЛОННОГО ЗВУКА И ПРОВЕРИТЬ ЕГО ПРОХОЖДЕНИЕ ТЕСТА)))
@@ -56,8 +57,11 @@ def start():
     print ('*'*50)
     print (' ')
     if k_note > k_laza:
+        message_2u = "GOOD!"
         print ("GOOD!")
+
     else:
+        message_2u = "Хреново..."
         print ('Хреново...,')
 
     if k_note > .915:
@@ -67,6 +71,7 @@ def start():
     print (' ')
     print ('*'*50)
     print ('*'*50)
+    return (message_2u)
 
 
 def load_audio():

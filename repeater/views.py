@@ -6,7 +6,8 @@ from . import analysis_audio
 
 def home(request):
     context = {
-        'wav': 'a_-1.wav'
+        'wav': 'a_-1.wav',
+        'message_2u': 'message_2u'
         #'wav': 'do.wav'
     }
     return render(request, 'repeater/home.html', context=context)
@@ -17,8 +18,16 @@ def get_recorded_audio(request):
         file.write(audio_file)
     messages.success(request, 'Файл отправлен на сервер!')
 
-    analysis_audio.start()
+    
+    message_2u = analysis_audio.start()
+    
+    context = {
+        'message_2u': message_2u,
+        'wav': 'do.wav'
+    }
+    
+    print("мессаге 2ю", message_2u)
 
-    #return render(request, 'repeater/home.html', context=context)
+    return render(request, 'repeater/home.html', context=context)
 
-    return redirect('home')
+    # return redirect('home')
