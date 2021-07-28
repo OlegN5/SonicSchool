@@ -23,9 +23,11 @@ from repeater import views as repeater_views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
     path('news/', include('news.urls')),
     path('gyms/', include('gyms.urls')),
+    path('polls/', include('polls.urls')),
 
     path('', repeater_views.home, name='home'),
     path('get_recorded_audio',
