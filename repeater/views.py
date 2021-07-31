@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, request
+from django.http import HttpResponse, request, JsonResponse
 from django.contrib import messages
 from . import analysis_audio
 from django.views.generic import View
-from django.http import JsonResponse
+
 # Create your views here.
 
 class Index(View):
@@ -30,7 +30,11 @@ class message2u(View):
         print ('request', request)
         message_2u = analysis_audio.start()
         print('message_2u!!!!!!!!', message_2u)
-        return JsonResponse({'message_2u': message_2u}, status=200)
+        print(JsonResponse({'message_2u': message_2u}, status=200))
+        return JsonResponse({
+            'message_2u': message_2u,
+            'status':'ok'
+            }, status=200)
 
 
        

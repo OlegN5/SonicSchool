@@ -3,15 +3,16 @@ $(document).ready(function(){
     var csrfToken = $("input[name=csrfmiddlewaretoken]").val()
    
     $("#message").click(function(){
-       
-       
         $.ajax({
             url: '/repeater/message2u/',
             data: {csrfmiddlewaretoken: csrfToken},
             type: 'post',
+            dataType: 'json',
             success: function(response) {
-                console.log("RESPONSE!")
-                $("#message_2u").append('<div class="card mb-1" id="taskCard">' + message_2u + '</div>')
+                
+                // alert(response.message_2u);
+                $("#mess").append('<div>' + response.message_2u + '</div>')
+             
             }
         })
     })

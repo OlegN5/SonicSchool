@@ -8,23 +8,8 @@
     </div>
     <div class="mb-4">
       <audio controls preload="auto">
-        <!-- <source src="{% static 'repeater/sounds/{{wav}}' %}" type="audio/wav"> -->
-        <source src="{% static '' %}sounds/{{wav}}" type="audio/wav">
-        <!-- <source src='static/sounds/{{wav}}' type="audio/wav"> -->
-        <!-- sounds/{{wav}}" type="audio/wav"> -->
-        
+        <source src="{% static '' %}sounds/{{wav}}" type="audio/wav"> 
       </audio>
-
-<!-- 
-      <audio controls="controls">
-        <source src="do.wav" type="audio/wav">
-        Ваш браузер не поддерживает элемент <code>audio</code>.
-      </audio> -->
-
-
-    </div>
-    <div class="form-group pt-4">
-      <p>ИТОГ:{{message_2u}}</p>
     </div>
     <div>
       <legend class="border-bottom mb-2">Запишите звук</legend>
@@ -40,16 +25,19 @@
         </fieldset>
         <div class="form-group pt-3">
             <button class="btn btn-outline-info" type="submit" onclick="sendRecord()">Отправить</button>
-            <button class="btn btn-outline-info" id='message'>Отправить</button>
+            
         </div>
     </form>
 
-    <div id="message_2u"></div>
+    <div id="message_2u">
+      <button class="btn btn-outline-info" id='message'>вывести результат</button>
+      <div id="mess"></div>
+    </div>
   </div>
 {% endblock content %}
 
 {% block scripts %}
   <script type="text/javascript" src="{% static 'js/recorder.js' %}"></script>
-
+  <script src="{% static 'js/message.js'%}"></script>
 {% endblock scripts %}
 
