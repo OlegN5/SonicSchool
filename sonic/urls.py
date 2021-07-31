@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from repeater import views as repeater_views
+
 # from users import views as users_views
 
 from django.contrib.auth import views as auth_views
@@ -26,10 +26,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('news/', include('news.urls')),
     path('gyms/', include('gyms.urls')),
+    path('repeater/', include('repeater.urls')),
 
-    path('', repeater_views.home, name='home'),
-    path('get_recorded_audio',
-        repeater_views.get_recorded_audio, name='get-recorded-audio'),
+    
 
     # path('register/', users_views.register, name='register'),
     # path('login/', users_views.login, name='login'),

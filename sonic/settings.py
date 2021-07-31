@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
 from django.contrib import messages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -188,4 +187,3 @@ LOGIN_REDIRECT_URL = 'repeater-home'
 
 LOGIN_URL = 'login'
 
-django_heroku.settings(locals())

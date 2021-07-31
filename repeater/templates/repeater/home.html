@@ -37,17 +37,16 @@
         </fieldset>
         <div class="form-group pt-3">
             <button class="btn btn-outline-info" type="submit" onclick="sendRecord()">Отправить</button>
+            <button class="btn btn-outline-info" id='message'>Отправить</button>
         </div>
-        
-    
     </form>
-    <div class="form-group pt-4">
-      <p>ИТОГ:{{message_2u}}</p>
-    </div>
+
+    <div id="message_2u"></div>
   </div>
 {% endblock content %}
 
 {% block scripts %}
   <script type="text/javascript" src="{% static 'js/recorder.js' %}"></script>
+
 {% endblock scripts %}
 
