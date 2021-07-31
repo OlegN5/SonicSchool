@@ -23,10 +23,15 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
     path('news/', include('news.urls')),
     path('gyms/', include('gyms.urls')),
+<<<<<<< HEAD
     path('repeater/', include('repeater.urls')),
+=======
+    path('polls/', include('polls.urls')),
+>>>>>>> f8c54602faf9ba07de36382a517e1c8631ed8e7a
 
     
 
