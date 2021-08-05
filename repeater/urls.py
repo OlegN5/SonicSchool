@@ -4,6 +4,9 @@ from repeater import views as repeater_views
    
 
 urlpatterns = [
+
+
+    path('', repeater_views.Index.index, name='index'), 
     path('home/get_recorded_audio',
         repeater_views.Index.get_recorded_audio, name='get-recorded-audio'),   
     path('home/', repeater_views.Index.home, name='home'), 

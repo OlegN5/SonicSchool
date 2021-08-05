@@ -15,6 +15,9 @@ class Index(View):
         }
         return render(request, 'repeater/home.html', context=context)
 
+    def index(request):
+        return redirect('home')
+
     def get_recorded_audio(request):
         audio_file = request.body
         with open('test.wav', 'wb') as file:
@@ -27,10 +30,10 @@ class Index(View):
 
 class message2u(View):
     def post(self, request):
-        print ('request', request)
+        # print ('request', request)
         message_2u = analysis_audio.start()
-        print('message_2u!!!!!!!!', message_2u)
-        print(JsonResponse({'message_2u': message_2u}, status=200))
+        # print('message_2u!!!!!!!!', message_2u)
+        # print(JsonResponse({'message_2u': message_2u}, status=200))
         return JsonResponse({
             'message_2u': message_2u,
             'status':'ok'

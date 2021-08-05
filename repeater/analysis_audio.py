@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from . import display
+# from . import display
 import sys
 import librosa
-import librosa.display
-import matplotlib.pyplot as plt
+# import librosa.display
+# import matplotlib.pyplot as plt
 # from playsound import playsound
 
 colors = ['xkcd:purple', 'xkcd:pinkish tan', 'xkcd:spruce', 'xkcd:strong blue'
@@ -37,6 +37,8 @@ def start():
         sumscore_l.append(sumscore)
         if sumscore > .05:
             print (f"звук - {notes[c]} - \t{sumscore}")
+            message_2u += f"звук - {notes[c]} - \t{sumscore}"
+            message_2u += '\n|||     '
 
     if nota > 9:
         kvinta = nota - 10
@@ -49,28 +51,38 @@ def start():
     sumscore_l[kvinta] = 0
     k_laza = sum (sumscore_l)
 
-    print ('*'*50)
-    print (f"звук-{notes[nota]}-\t{k_note}")
-    print (f"звук-{notes[kvinta]}-\t{k_kvinta}")
-    print (f"звук-'ЛАЖА'-\t{k_laza}")
-    print ('*'*50)
-    print ('*'*50)
-    print (' ')
+    # print ('*'*50)
+    message_2u += '*'*50 +'\n'
+    # print (f"звук-{notes[nota]}-\t{k_note}")
+    message_2u += f"звук-{notes[nota]}-\t{k_note}"
+    message_2u += '\n|||     '
+    # print (f"звук-{notes[kvinta]}-\t{k_kvinta}")
+    message_2u += f"звук-{notes[kvinta]}-\t{k_kvinta}"
+    message_2u += '\n|||     '
+    # print (f"звук-'ЛАЖА'-\t{k_laza}")
+    message_2u += f"звук-'ЛАЖА'-\t{k_laza}"
+    message_2u += '\n|||     '
+    # print ('*'*50)
+    message_2u += '*'*50
+    message_2u += '\n'
+    # print ('*'*50)
+    # print (' ')
     if k_note > k_laza:
-        message_2u = "GOOD!"
-        print ("GOOD!")
+        message_2u += "GOOD!"
+        # print ("GOOD!")
 
     else:
-        message_2u = "Хреново..."
-        print ('Хреново...,')
+        message_2u += "Хреново..."
+        message_2u += '\n'
+        # print ('Хреново...,')
 
-    if k_note > .915:
-        print ("но есть надежда!")
-    else:
-        print ('очень хреново...')
-    print (' ')
-    print ('*'*50)
-    print ('*'*50)
+    # if k_note > .915:
+    #     print ("но есть надежда!")
+    # else:
+    #     print ('очень хреново...')
+    # # print (' ')
+    # # print ('*'*50)
+    # # print ('*'*50)
     return (message_2u)
 
 
