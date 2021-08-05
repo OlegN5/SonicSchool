@@ -9,8 +9,7 @@ $(document).ready(function(){
             type: 'post',
             dataType: 'json',
             success: function(response) {
-                
-                // alert(response.message_2u);
+                alert(response.message_2u);
                 $("#mess").append('<div>' + response.message_2u + '</div>')
              
             }
