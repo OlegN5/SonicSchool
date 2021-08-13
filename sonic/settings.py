@@ -29,8 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    '127.0.0.1'
-    'sonicschool2.herokuapp.com'
+    '127.0.0.1',
+    '178.154.230.106'
 ]
 
 # Application definition
