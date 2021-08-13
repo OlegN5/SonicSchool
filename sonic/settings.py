@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SONICSCHOOL_DJANGO_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.environ.get('DJANGO_DEBUG_VALUE')
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
