@@ -7,7 +7,7 @@ dj-database-url==0.5.0
 django-crispy-forms==1.11.0
 gunicorn==20.1.0
 kiwisolver==1.3.1
-playsound==1.2.2#??? почемуто вместе со всеми не установился...
+playsound==1.2.2
 python-dateutil==2.8.1
 retrying==1.3.3
 whitenoise==5.2.0
