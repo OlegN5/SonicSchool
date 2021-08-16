@@ -22,7 +22,7 @@ class Index(View):
     def get_recorded_audio(request):
         audio_file = request.body
         # with open('test.wav', 'wb') as file:
-        with open('test.mp3', 'wb') as file:   
+        with open('test.wav', 'wb') as file:   
             file.write(audio_file)
         messages.success(request, 'Файл отправлен на сервер!')
         return render(request, 'repeater/home.html')

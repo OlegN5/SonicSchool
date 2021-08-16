@@ -41,8 +41,8 @@ function handlerFunction(stream) {
         audioChunks.push(e.data);
         //console.log(audioChunks);
         if (rec.state == "inactive"){
-            // blob = new Blob(audioChunks,{type:'audio/wav'});
-            blob = new Blob(audioChunks,{type:'audio/mpeg'});
+            blob = new Blob(audioChunks,{type:'audio/wav'});
+            //blob = new Blob(audioChunks,{type:'audio/mpeg'});
             recordedAudio.src = URL.createObjectURL(blob);
             recordedAudio.controls=true;
             recordedAudio.hidden = false;
