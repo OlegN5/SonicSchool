@@ -3,7 +3,7 @@
 
 import sys
 
-import librosa as librosa
+import librosa
 
 # import librosa.display
 # import matplotlib.pyplot as plt
