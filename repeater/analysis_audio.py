@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 # from . import display
+
 import sys
-import librosa
+
+import librosa as librosa
+
 # import librosa.display
 # import matplotlib.pyplot as plt
 # from playsound import playsound
@@ -89,9 +92,9 @@ def start():
 def load_audio():
     sr = 44100
     # audio_data_user = 'test.wav'#!!!!!!!!!!!!ЭТО ПУТЬ К ЗАПИСАННОМУ ФАЙЛУ
-    audio_data_user = 'test.wav'#!!!!!!!!!!!!ЭТО ПУТЬ К ЗАПИСАННОМУ ФАЙЛУ
+    audio_data_user = '/home/oleg/site/SonicSchool/test.wav'#!!!!!!!!!!!!ЭТО ПУТЬ К ЗАПИСАННОМУ ФАЙЛУ
     #audio_data_user = 'rec_voice/a_02.wav' #!!!!!!!!!!ЗДЕСЬ МОИ ТЕСТОВЫЕ ФАЙЛЫ МОЖЕШЬ НА НИХ ПОСМОТРЕТЬ ДЕЙСТВИЕ!!!!!!!!
-    audio_data_ton = 'repeater/static/sounds/a_-1.wav'
+    audio_data_ton = '/home/oleg/site/SonicSchool/repeater/static/sounds/a_-1.wav'
     # playsound(audio_data_ton) # пришлось комментить
     # playsound(audio_data_user) # пришлось комментить
     y, sr = librosa.load(audio_data_ton, sr)

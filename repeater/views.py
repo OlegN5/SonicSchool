@@ -22,11 +22,11 @@ class Index(View):
     def get_recorded_audio(request):
         audio_file = request.body
         # with open('test.wav', 'wb') as file:
-        with open('test.wav', 'wb') as file:   
+        with open('/home/oleg/site/SonicSchool/test.wav', 'wb') as file:
             file.write(audio_file)
         messages.success(request, 'Файл отправлен на сервер!')
         return render(request, 'repeater/home.html')
-    
+
     # return redirect('home')
 
 
@@ -40,6 +40,3 @@ class message2u(View):
             'message_2u': message_2u,
             'status':'ok'
             }, status=200)
-
-
-       

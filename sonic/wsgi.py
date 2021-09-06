@@ -8,8 +8,8 @@ https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/
 """
 
 import os,sys
-sys.path.append('/var/www')
-sys.path.append('/var/www/SonicSchool')
+sys.path.append('/home/oleg/site')
+sys.path.append('/home/oleg/site/SonicSchool')
 
 
 
