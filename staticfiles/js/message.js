@@ -1,7 +1,7 @@
 $(document).ready(function(){
     // console.log('READY!!!')
     var csrfToken = $("input[name=csrfmiddlewaretoken]").val()
-   
+
     $("#message").click(function(){
         $.ajax({
             url: '/repeater/message2u/',
@@ -11,7 +11,6 @@ $(document).ready(function(){
             success: function(response) {
                 alert(response.message_2u);
                 $("#mess").append('<div>' + response.message_2u + '</div>')
-             
             }
         })
     })
@@ -28,7 +27,7 @@ $(document).ready(function(){
     //         type: 'post',
     //         success: function(response) {
     //             $("#taskList").append('<div class="card mb-1" id="taskCard" data-id="' + response.task.id + '"><div class="card-body">' + response.task.title + '<button type="button" class="btn-close float-right" data-id="' + response.task.id + '"></button></div></div>')
-    //         } 
+    //         }
     //     })
     //     $("#createTaskForm")[0].reset()
     // })
