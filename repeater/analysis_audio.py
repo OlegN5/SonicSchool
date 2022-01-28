@@ -5,6 +5,10 @@ import sys
 
 import librosa
 
+from django.conf import settings
+
+import os
+
 # import librosa.display
 # import matplotlib.pyplot as plt
 # from playsound import playsound
@@ -24,24 +28,40 @@ colors = ['xkcd:purple', 'xkcd:pinkish tan', 'xkcd:spruce', 'xkcd:strong blue'
     , 'xkcd:strong blue', 'xkcd:toxic green', 'xkcd:windows blue','xkcd:blue blue'
     , 'xkcd:blue with a hint of purple']
 
-notes = ['C', 'C+', 'C#', 'C#+', 'D', 'D+', 'D#', 'D#+', 'E', 'E+'
-, 'F', 'F+', 'F#', 'F#+', 'G', 'G+', 'G#', 'G#+', 'A', 'A+'
-, 'B', 'B+', 'H', 'H+']# for n_chroma = 24
+notes = ['C  ', 'C+ ', 'C# ', 'C#+', 'D  ', 'D+ ', 'D# ', 'D#+', 'E  ', 'E+ '
+, 'F  ', 'F+ ', 'F# ', 'F#+', 'G  ', 'G+ ', 'G# ', 'G#+', 'A  ', 'A+ '
+, 'B  ', 'B+ ', 'H  ', 'H+ ']# for n_chroma = 24
 
-def start():
-    message_2u =''
-    y, y1 = load_audio()
-    nota = 18# случайно выбранный звук
+def start(nota, fileNameRec): # случайно выбранный звук
+    print (nota)
+    print (notes[nota])
+    message_2u = f'Воспроизведен звук {notes[nota]}\n'
+    
+    y, y1 = load_audio(nota, fileNameRec)
     cg = colorgram(y1, 44100)# !!!!!!!!!!!!!!!!!!!ЕСЛИ УБРАТЬ У ИГРЕКА ЕДИНИЦУ МОЖНО ВЫВЕСТИ ГРАФИК ЭТАЛОННОГО ЗВУКА И ПРОВЕРИТЬ ЕГО ПРОХОЖДЕНИЕ ТЕСТА)))
 
     sumscore_l = []
+    mData = {}
     for c in range(24):
-        sumscore = sum(cg[c])/len(cg[c])
+        sumscore = round(sum(cg[c])/len(cg[c]),4)
         sumscore_l.append(sumscore)
-        if sumscore > .05:
-            print (f"звук - {notes[c]} - \t{sumscore}")
-            message_2u += f"звук - {notes[c]} - \t{sumscore}"
-            message_2u += '\n|||     '
+        mData[notes[c]] = [sumscore_l[c]]
+        # if sumscore > .05:
+        #     print (f"звук - {notes[c]} - \t{sumscore}")
+        #     message_2u += f"<p>звук - {notes[c]} - \t{sumscore}</p>"
+
+    list_d = list(mData.items())
+    list_d.sort(key=lambda i: i[1])
+
+   
+    message_2u += f'В записи\nсодержатся тоны:\n'
+    b = 0
+    for i in reversed(list_d):
+        b += 1
+        print(i[0], ':', i[1])
+        message_2u += f'звук {i[0]}\t{i[1]}\n'
+        if b == 4:
+            break
 
     if nota > 9:
         kvinta = nota - 10
@@ -52,51 +72,42 @@ def start():
     sumscore_l[nota] = 0
     k_kvinta = sumscore_l[kvinta]
     sumscore_l[kvinta] = 0
-    k_laza = sum (sumscore_l)
+    k_laza = round(sum (sumscore_l), 4)
 
-    # print ('*'*50)
-    message_2u += '*'*50 +'\n'
-    # print (f"звук-{notes[nota]}-\t{k_note}")
-    message_2u += f"звук-{notes[nota]}-\t{k_note}"
-    message_2u += '\n|||     '
-    # print (f"звук-{notes[kvinta]}-\t{k_kvinta}")
-    message_2u += f"звук-{notes[kvinta]}-\t{k_kvinta}"
-    message_2u += '\n|||     '
-    # print (f"звук-'ЛАЖА'-\t{k_laza}")
-    message_2u += f"звук-'ЛАЖА'-\t{k_laza}"
-    message_2u += '\n|||     '
-    # print ('*'*50)
-    message_2u += '*'*50
-    message_2u += '\n'
-    # print ('*'*50)
-    # print (' ')
+    message_2u +='*'*10 + '\n'
+    
+    message_2u += f'тон {notes[nota]} \t{k_note}\n'
+    print ('***')
+    print(f"звук {notes[nota]}\t{k_note}")
+    print ('***')
+
+
+    message_2u += f'Ч.5 {notes[kvinta]}\t{k_kvinta}\n'
+    print ('***')
+    print(f"квинта {notes[kvinta]}\t{k_kvinta}")
+    print ('***')
+    message_2u += f'суммарная лажа)))\t{k_laza}\n'
+    print ('***')
+    print(f"суммарная лажа))) \t{k_laza}")
+    print ('***')
+    message_2u += '*'*10 + '\n'
+    
     if k_note > k_laza:
-        message_2u += "GOOD!"
-        # print ("GOOD!")
-
+        message_2u += 'GOOD!\n'
     else:
-        message_2u += "Хреново..."
-        message_2u += '\n'
-        # print ('Хреново...,')
-
-    # if k_note > .915:
-    #     print ("но есть надежда!")
-    # else:
-    #     print ('очень хреново...')
-    # # print (' ')
-    # # print ('*'*50)
-    # # print ('*'*50)
+        message_2u += 'Хреново...,\n'
+        if k_note > .915:
+            message_2u +='но есть надежда!'
+        else:
+            message_2u += 'очень хреново...'
     return (message_2u)
 
 
-def load_audio():
+
+def load_audio(nota, fileNameRec):
     sr = 44100
-    # audio_data_user = 'test.wav'#!!!!!!!!!!!!ЭТО ПУТЬ К ЗАПИСАННОМУ ФАЙЛУ
-    audio_data_user = '/home/oleg/site/SonicSchool/test.wav'#!!!!!!!!!!!!ЭТО ПУТЬ К ЗАПИСАННОМУ ФАЙЛУ
-    #audio_data_user = 'rec_voice/a_02.wav' #!!!!!!!!!!ЗДЕСЬ МОИ ТЕСТОВЫЕ ФАЙЛЫ МОЖЕШЬ НА НИХ ПОСМОТРЕТЬ ДЕЙСТВИЕ!!!!!!!!
-    audio_data_ton = '/home/oleg/site/SonicSchool/repeater/static/sounds/a_-1.wav'
-    # playsound(audio_data_ton) # пришлось комментить
-    # playsound(audio_data_user) # пришлось комментить
+    audio_data_user = fileNameRec
+    audio_data_ton = os.path.join(settings.STATIC_ROOT,'repeater/sounds/' + str(nota) + '.wav')
     y, sr = librosa.load(audio_data_ton, sr)
     y1, sr = librosa.load(audio_data_user, sr)
     return y, y1

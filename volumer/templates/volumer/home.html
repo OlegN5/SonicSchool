@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+<!-- {% load static %} -->
+
+{% block content %}
+  <div class="content-section">
+    <div>
+      <legend class="border-bottom mb-4">Прослушайте звуки</legend>
+    </div>
+    <div class="mb-4">
+      <audio controls preload="auto" class = "sound1">
+        <source type="audio/wav"> 
+      </audio>
+      <audio controls preload="auto" class = "sound2">
+        <source type="audio/wav"> 
+      </audio>
+    </div>
+    <div>
+      <legend class="border-bottom mb-2">Какой звук громче?</legend>
+      <button class="btn btn-outline-info" id = 'button1'>Первый</button>
+      <button class="btn btn-outline-info" id = 'button2'>Второй</button>
+      <!-- <button class="btn btn-outline-info" id = 'button3'>Одинаково</button>  -->
+    </div>
+    <div>
+      <p class='result'></p>
+      <p class='volume1'></p>
+      <p class='src1'></p>
+      <p class='volume2'></p>
+      <p class='src2'></p>
+    </div>
+
+    {% csrf_token %}
+
+    <section class="sound-clips">
+    </section>
+
+    <div id="message_2u">
+      <!-- <button class="btn btn-outline-info" id='message'>Вывести результат</button> -->
+      <div id="mess"></div>
+    </div>
+  </div>
+{% endblock content %}
+
+{% block scripts %}
+  <script> var static_url = "{% get_static_prefix %}" </script>
+  <script type="text/javascript" src="{% static 'volumer/js/volumer.js' %}"></script>
+{% endblock scripts %}
+

@@ -1,5 +1,5 @@
-{% extends "repeater/base.html" %}
-{% load static %}
+{% extends "base.html" %}
+<!-- {% load static %} -->
 
 {% block content %}
   <div class="content-section">
@@ -7,42 +7,41 @@
       <legend class="border-bottom mb-4">Прослушайте звук</legend>
     </div>
     <div class="mb-4">
-      <audio controls preload="auto">
-        <source src="{% static '' %}sounds/{{wav}}" type="audio/wav"> 
+      <audio controls preload="auto" id = "player">
+        <source src="{% static '' %}repeater/sounds/{{wav}}" type="audio/wav"> 
       </audio>
-
-     
-
-
-
     </div>
     <div>
       <legend class="border-bottom mb-2">Запишите звук</legend>
       <button class="record-button ml-4 mt-4 mb-4" id="recordButton" onclick="startRecord()"></button>
       <span class="ml-4" id="recordMessage" hidden>Идёт запись</span>
     </div>
-    <form method="POST" enctype="multipart/form-data">
+    <!-- <form method="POST" enctype="multipart/form-data"> -->
         {% csrf_token %}
-        <fieldset class="form-group">
+        <!-- <fieldset class="form-group">
           <div>
             <audio controls id="recordedAudio" hidden name="recordedAudio"></audio>
           </div>
-        </fieldset>
-        <div class="form-group pt-3">
+        </fieldset> -->
+        <!-- <div class="form-group pt-3">
             <button class="btn btn-outline-info" type="submit" onclick="sendRecord()">Отправить</button>
             
-        </div>
-    </form>
+        </div> -->
+    <!-- </form> -->
+    <canvas class="grafik" height="60px"></canvas>
+    <section class="sound-clips">
+      
+    </section>
 
     <div id="message_2u">
-      <button class="btn btn-outline-info" id='message'>Вывести результат</button>
+      <!-- <button class="btn btn-outline-info" id='message'>Вывести результат</button> -->
       <div id="mess"></div>
     </div>
   </div>
 {% endblock content %}
 
 {% block scripts %}
-  <script type="text/javascript" src="{% static 'js/recorder.js' %}"></script>
-  <script src="{% static 'js/message.js'%}"></script>
+  <script type="text/javascript" src="{% static 'repeater/js/recorder.js' %}"></script>
+  <script src="{% static 'repeater/js/plots.js'%}"></script>
 {% endblock scripts %}
 

@@ -1,9 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 # Create your views here.
 
 
 def index(request):
     # print (dir(request))
-    return HttpResponse ('<h1>SOUND GYMS</h1>')
+    return render (request, 'gyms/home.html')
+
+
+ 
   

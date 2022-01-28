@@ -1,0 +1,405 @@
+@font-face {font-family: "AppetitePro Medium";
+  src: url("fonts/appetite/5ac15f2b5db3330d74ce777f3c5bba41.eot"); /* IE9*/
+  src: url("fonts/appetite/5ac15f2b5db3330d74ce777f3c5bba41.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("fonts/appetite/5ac15f2b5db3330d74ce777f3c5bba41.woff2") format("woff2"), /* chrome、firefox */
+  url("fonts/appetite/5ac15f2b5db3330d74ce777f3c5bba41.woff") format("woff"), /* chrome、firefox */
+  url("fonts/appetite/5ac15f2b5db3330d74ce777f3c5bba41.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("fonts/appetite/5ac15f2b5db3330d74ce777f3c5bba41.svg#AppetitePro Medium") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {font-family: "Karlson";
+  src: url("fonts/karlson/karlson.eot"); /* IE9*/
+  src: url("fonts/karlson/karlson.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("fonts/karlson/karlson.woff2") format("woff2"), /* chrome、firefox */
+  url("fonts/karlson/karlson.woff") format("woff"), /* chrome、firefox */
+  url("fonts/karlson/karlson.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("fonts/karlson/karlson.svg#Karlson") format("svg"); /* iOS 4.1- */
+}
+
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+  overflow-x: hidden;
+}
+
+.theme-boy {
+   --background-color: #e6e8f7;
+   --color-primary: #5f70ed;
+   --color-secondary: #4287f5;
+   --color-accent: #0015ff;
+   --font-color: #000000;
+   --transparent-color1: rgba(24,112,244,0.24);
+   --transparent-color2: rgba(30,94,246,0.35);
+}
+.theme-girl {
+   --background-color: #ffffe3;
+   --color-primary: #ff73e8;
+   --color-secondary: #c887e6;
+   --color-accent: #ff0077;
+   --font-color: #ff0066;
+   --transparent-color1: rgba(252,51,230,0.24);
+   --transparent-color2: rgba(255,118,253,0.35);
+}
+.theme-default {
+   --background-color: #daf6ce;
+   --color-primary: #17ed90;
+   --color-secondary: #243133;
+   --color-accent: #0eb12d;
+   --font-color: #ffffff;
+   --transparent-color1: rgba(51,252,130,0.24);
+   --transparent-color2: rgba(49,224,82,0.35);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+ul {
+  margin: 0;
+}
+
+
+.navbar-brand {
+  font-family: "Karlson";
+  height: 64px;
+  color: #cbd5dd;
+}
+
+.navbar-brand img {
+  height: 64px;
+  width: auto;
+  color: #cbd5dd;
+}
+
+.bg-steel {
+  /*background-color: #5f788a;*/
+  /*background-color: var(--color-primary)*/
+  background-image: linear-gradient(150deg, var(--color-primary), var(--color-secondary));
+}
+
+.site-header .navbar-nav .nav-link {
+  
+  font-family: "AppetitePro Medium";
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content {
+  min-height: calc(100% - 54px - 50px);
+}
+
+.content-section {
+  background: var(--background-color);
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding-bottom: 50px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.names_for_girls .name_span
+{
+  color: #ff0066;
+}
+.names_for_boys .name_span
+{
+  color: #6d99fe;
+}
+
+.names_details_keys {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 10px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-primary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.button-theme {
+  background-color: var(--color-primary);
+  border: var(--color-secondary);
+  transition-duration: 0.4s;
+}
+
+.button-theme:hover {
+  background-color: var(--color-accent);
+}
+
+.button-theme span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-theme span:before {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -30px;
+  transition: 0.5s;
+}
+
+.button-theme span:after {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 0.5s;
+}
+
+
+.button-theme:hover span:after {
+  opacity: 1;
+  right: -25px;
+}
+
+.button-theme:hover span:before {
+  opacity: 1;
+  left: -25px;
+}
+
+.button-theme:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button-theme:active span:after{
+  right: -20px;
+}
+
+.button-theme:active span:before{
+  left: -20px;
+}
+
+.name-card {
+  opacity: 1;
+  position: relative;
+  cursor: pointer;
+  height: 45vh;
+  width: 30vh;
+  max-height: 45vh;
+  min-width: 10vh;
+  max-width: 40vh;
+  background: radial-gradient(circle, var(--transparent-color1) 0%, var(--transparent-color2) 100%);
+  /*border-color: var(--color-accent);*/
+  border-radius: 5%;
+  /*border-width: 3px;*/
+}
+
+.card-title {
+  max-width: 100%;
+  font-family: "Karlson";
+  margin-top: 15px;
+  color: var(--color-accent);
+  font-size: 25px;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.card-text {
+  color: var(--color-accent);
+  opacity: 0.6;
+}
+
+.control-panel {
+  position: relative;
+  left: 10px;
+}
+
+.no-text {
+  position: absolute;
+  left: 1em;
+  bottom: 1em;
+  color: red;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.yes-text {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  color: green;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.site-footer {
+  height: 50px;
+  margin-top: -50px;
+}
+
+.record-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  max-width:50%; 
+  max-height: 15%; 
+  background-color: red;
+}
+
+.sound-clips {
+  flex: 1;
+  overflow: auto;
+}
+
+section, article {
+  display: block;
+}
+
+.clip {
+  padding-bottom: 1rem;
+}
+
+audio {
+  width: 100%;
+  display: block;
+  margin: 1rem auto 0.5rem;
+}
+
+.clip p {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.clip button {
+  font-size: 1rem;
+  float: right;
+}
+
+
+button.analis {
+  background: rgb(179, 234, 236);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  float: left;
+}
+
+button.delete {
+  background: rgb(240, 198, 158);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+}

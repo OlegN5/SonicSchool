@@ -25,12 +25,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'dfgrth56u67jrtfgert34t'
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.environ.get('DJANGO_DEBUG_VALUE')
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    '147.75.35.150','www.sonicschool.ru'
+    'sonicschool.ru',
+    'www.sonicschool.ru'
 ]
 
 # Application definition
@@ -43,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'repeater.apps.RepeaterConfig',
+    'volumer.apps.VolumerConfig',
+    'wider.apps.WiderConfig',
     'news.apps.NewsConfig',
     'gyms.apps.GymsConfig',
     'users.apps.UsersConfig',
@@ -64,7 +67,8 @@ ROOT_URLCONF = 'sonic.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/oleg/site/SonicSchool/templates'
+],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

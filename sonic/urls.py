@@ -27,11 +27,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('news/', include('news.urls')),
     path('gyms/', include('gyms.urls')),
-    path('', include('repeater.urls')),
     path('repeater/', include('repeater.urls')),
-
+    path('volumer/', include('volumer.urls')),
+    path('wider/', include('wider.urls')),
+    path('', include('gyms.urls')),
     
-
     # path('register/', users_views.register, name='register'),
     # path('login/', users_views.login, name='login'),
     # path('profile/', users_views.profile, name='profile'),
