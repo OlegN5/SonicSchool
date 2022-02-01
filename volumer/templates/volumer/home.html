@@ -6,14 +6,20 @@
     <div>
       <legend class="border-bottom mb-4">Прослушайте звуки</legend>
     </div>
-    <div class="mb-4">
+    <div>
+    <button class="btn btn-outline-info" id = 'play1'>Первый</button>
+    <button class="btn btn-outline-info" id = 'play2'>Второй</button>
+    </div>
+
+
+    <!-- <div class="mb-4">
       <audio controls preload="auto" class = "sound1">
         <source type="audio/wav"> 
       </audio>
       <audio controls preload="auto" class = "sound2">
         <source type="audio/wav"> 
       </audio>
-    </div>
+    </div> -->
     <div>
       <legend class="border-bottom mb-2">Какой звук громче?</legend>
       <button class="btn btn-outline-info" id = 'button1'>Первый</button>
@@ -42,6 +48,8 @@
 
 {% block scripts %}
   <script> var static_url = "{% get_static_prefix %}" </script>
+  <script type="text/javascript" src="{% static 'volumer/js/howler.js' %}"></script>
   <script type="text/javascript" src="{% static 'volumer/js/volumer.js' %}"></script>
+  
 {% endblock scripts %}
 
