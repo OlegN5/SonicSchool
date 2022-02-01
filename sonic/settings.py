@@ -67,7 +67,7 @@ ROOT_URLCONF = 'sonic.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/oleg/site/SonicSchool/templates'
+        'DIRS': [os.path.join(BASE_DIR, 'templates')
 ],
         'APP_DIRS': True,
         'OPTIONS': {
