@@ -30,6 +30,7 @@ urlpatterns = [
     path('repeater/', include('repeater.urls')),
     path('volumer/', include('volumer.urls')),
     path('wider/', include('wider.urls')),
+    path('attenter/', include('attenter.urls')),
     path('', include('gyms.urls')),
     
     # path('register/', users_views.register, name='register'),

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+<!-- {% load static %} -->
+
+{% block content %}
+  <div class="content-section">
+
+    <div>
+      <h3>Послушайте музыкальный трек</h3>
+      <button id='start' type="button" class="btn btn-primary btn-lg">СТАРТ</button>
+      <button id='restart' type="button" class="btn btn-primary btn-lg">РЕСТАРТ</button>
+      <button id='stop' type="button" class="btn btn-primary btn-lg">СТОП</button>
+    </div>  
+    <p></p>
+    <h3>Сколько было помех?</h3>
+
+    <div class="bbb3">
+      <button id= 'n1' type="button" class="btn btn-primary btn-lg">1</button>
+      <button id= 'n2' type="button" class="btn btn-primary btn-lg">2</button>
+      <button id= 'n3' type="button" class="btn btn-primary btn-lg">3</button>
+      <button id= 'n4' type="button" class="btn btn-primary btn-lg">4</button>
+      <button id= 'n5' type="button" class="btn btn-primary btn-lg">5</button>
+      <button id= 'n6' type="button" class="btn btn-primary btn-lg">6</button>
+      <button id= 'n7' type="button" class="btn btn-primary btn-lg">7</button>
+      <button id= 'n8' type="button" class="btn btn-primary btn-lg">8</button>
+      <button id= 'n9' type="button" class="btn btn-primary btn-lg">9</button>
+      <button id='n10' type="button" class="btn btn-primary btn-lg">10</button>
+      <button id='n11' type="button" class="btn btn-primary btn-lg">11</button>
+    </div> 
+
+    <div>
+      <p></p>
+      <h3>Ошибки: </h3> 
+      <p id ='mis'></p>
+      <p></p>
+      <h3>Ответы: </h3>
+      <p id = 'check_'></p>
+    </div>  
+
+    {% csrf_token %}
+
+  </div>
+{% endblock content %}
+
+{% block scripts %}
+  <script> var static_url = "{% get_static_prefix %}" </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.4/Pizzicato.js"></script>
+  <script type="text/javascript" src="{% static 'attenter/js/attenter.js' %}"></script>
+  
+
+  
+{% endblock scripts %}
+
