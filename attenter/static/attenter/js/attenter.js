@@ -46,7 +46,10 @@ startMusic.addEventListener("click", function () {
     restartMusic.disabled = true
     startMusic.disabled = true
 
-  bassGuitar = new Pizzicato.Sound(static_url + 'attenter/sounds/04_Bass.mp3', function () {
+  bassGuitar = new Pizzicato.Sound({ 
+    source: 'file',
+    options: { path: [static_url + 'attenter/sounds/04_Bass.mp3', static_url + 'attenter/sounds/04_Bass.wav' , static_url + 'attenter/sounds/04_Bass.opus' ]}
+}, function () {
    
 
     // Sound loaded!
