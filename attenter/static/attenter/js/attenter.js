@@ -5,6 +5,7 @@ var pomehi = [];
 var isPomeha = -1
 var keyDown = false
 
+
 startMusic = document.querySelector("#start");
 restartMusic = document.querySelector("#restart");
 stopMusic = document.querySelector("#stop");
