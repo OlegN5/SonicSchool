@@ -32,7 +32,6 @@ button11 = document.querySelector("#n11");
 function createCheck(x){
   for (let g = 0; g < x; g++){
     check.insertAdjacentHTML('beforeend', "<p id = check"+String(g)+"><strong>" + String(g+1) + "</strong> ---  </p>");
-  
   }  
   
 
@@ -106,7 +105,7 @@ startMusic.addEventListener("click", function () {
       savePomehi();
       pomehi = [];
     });
-
+    Pizzicato.context.resume()
     bassGuitar.play();
   });
 
@@ -134,6 +133,7 @@ function delaySin(delay, att, rel, fr, vol, n) {
     sineWave.frequency = fr;
     sineWave.volume = vol;
 
+    Pizzicato.context.resume()
     sineWave.play();
         checkPomeha(n)
     console.log("sinStart");
@@ -228,7 +228,7 @@ restartMusic.addEventListener("click", function () {
       }
       pomehi = [];
     });
-
+    Pizzicato.context.resume()
     bassGuitar.play();
   });
 
