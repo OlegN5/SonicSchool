@@ -42,6 +42,10 @@ function createCheck(x) {
 }
 
 startMusic.addEventListener("click", function () {
+  if (Pizzicato.context.state !== 'running') {
+    Pizzicato.context.resume()
+  }
+
   document.querySelector("#mis").textContent = 0
 
   disableButtons()
@@ -117,7 +121,7 @@ startMusic.addEventListener("click", function () {
         savePomehi();
         pomehi = [];
       });
-      Pizzicato.context.resume()
+      
       bassGuitar.play()
     }
   );
@@ -151,7 +155,7 @@ function delaySin(delay, att, rel, fr, vol, n) {
     sineWave.frequency = fr;
     sineWave.volume = vol;
 
-    Pizzicato.context.resume();
+    
     sineWave.play();
     checkPomeha(n);
     console.log("sinStart");
@@ -195,6 +199,13 @@ document.addEventListener("keydown", function (e) {
 });
 
 restartMusic.addEventListener("click", function () {
+  if (Pizzicato.context.state !== 'running') {
+    Pizzicato.context.resume()
+  }
+
+
+
+
   disableButtons();
   restartMusic.disabled = true;
   startMusic.disabled = true;
