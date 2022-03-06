@@ -72,9 +72,6 @@ sineWave.on("play", function () {
 });
 
 
-
-
-
 startMusic.addEventListener("click", function () {
   if (Pizzicato.context.state !== "running") {
     Pizzicato.context.resume();
@@ -84,7 +81,6 @@ startMusic.addEventListener("click", function () {
   readAndPlayPomehi()
   bassGuitar.play();
   document.querySelector("#mis").textContent = 0;
-  console.log("sound fileing!");
 });
 
 restartMusic.addEventListener("click", function () {
@@ -105,12 +101,7 @@ stopMusic.addEventListener("click", function () {
   // fillCheck () // find not BAD or GOOD and ADD 'NOT' !!!!!!!!!!!!!!!!!!!!!!!
   checkForRestart = check.innerHTML;
   check.innerHTML = "";
-
-
 });
-//quick reset of the timer array you just cleared
-
-
 
 
 
@@ -185,10 +176,8 @@ document.addEventListener("dblclick", function (e) {
     }
     if (isPomeha == -1) {
       isNotKey()
-    }
-    
+    }   
 });
-
 
 
 
@@ -199,7 +188,6 @@ function createPomehi() {
   let n = 0;
   let arr = [];
   while (n < x) {
-    // выводит 0, затем 1, затем 2
     delay = getRandomIntInclusive(3, 60);
     for (let b = 0; b < arr.length; b++) {
       if (arr[b] === delay) {
@@ -226,7 +214,6 @@ function createPomehi() {
       ", частота: ",
       fr
     );
-    // delaySin(delay, att, rel, fr, vol, n);
     n++;
   }
   console.log(arr);
@@ -270,13 +257,6 @@ function readAndPlayPomehi(){
 
 
 
-
-// stopMusic.addEventListener("click", function () {
-//     bassGuitar.stop();
-//     sineWave.stop();
-
-// })
-
 function createCheck(x) {
   for (let g = 0; g < x; g++) {
     check.insertAdjacentHTML(
@@ -303,11 +283,3 @@ function getRandomIntInclusive(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
 }
-
-// function addSin(){
-//    setTimeout(() => {
-//        setTimeout(theOneFunc, 100, 1)
-//    } , 5000)
-//     // setTimeout(theOneFunc, 8 * 1000, 2);
-
-// }
