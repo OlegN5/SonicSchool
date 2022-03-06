@@ -49,6 +49,7 @@ bassGuitar = new Pizzicato.Sound(
       startMusic.disabled = true;
       bassTimer = setTimeout(() => {
         bassGuitar.stop();
+        checkForRestart = check.innerHTML;
       }, 61 * 1000);
     });
   }
@@ -78,6 +79,7 @@ startMusic.addEventListener("click", function () {
   if (Pizzicato.context.state !== "running") {
     Pizzicato.context.resume();
   }
+  check.innerHTML = "";
   createPomehi()
   readAndPlayPomehi()
   bassGuitar.play();
@@ -207,7 +209,7 @@ function createPomehi() {
       }
     }
     arr.push(delay);
-    att = getRandomIntInclusive(1, 100) / 100;
+    att = getRandomIntInclusive(3, 100) / 100;
     rel = getRandomIntInclusive(1, 100) / 100;
     fr = getRandomIntInclusive(200, 600);
     vol = getRandomIntInclusive(200, 250) / 1000;
