@@ -4,174 +4,139 @@ var x;
 var pomehi = [];
 var isPomeha = -1;
 var keyDown = false;
+var timeoutsPomehi = [];
+var checkForRestart;
 
 startMusic = document.querySelector("#start");
 restartMusic = document.querySelector("#restart");
 stopMusic = document.querySelector("#stop");
 check = document.querySelector("#check_");
 
-restartMusic.disabled = true;
-
-buttons = document.querySelector("#inputN");
-button1 = document.querySelector("#n1");
-button2 = document.querySelector("#n2");
-button3 = document.querySelector("#n3");
-button4 = document.querySelector("#n4");
-button5 = document.querySelector("#n5");
-button6 = document.querySelector("#n6");
-button7 = document.querySelector("#n7");
-button8 = document.querySelector("#n8");
-button9 = document.querySelector("#n9");
-button10 = document.querySelector("#n10");
-button11 = document.querySelector("#n11");
 // const theOneFunc = delay => {
 //     console.log('Hello after ' + delay + ' seconds');
 //     sineWave.stop()
 //   };
-function createCheck(x) {
-  for (let g = 0; g < x; g++) {
-    check.insertAdjacentHTML(
-      "beforeend",
-      "<p id = check" +
-        String(g) +
-        "><strong>" +
-        String(g + 1) +
-        "</strong> ---  </p>"
-    );
-  }
-}
 
-startMusic.addEventListener("click", function () {
-  if (Pizzicato.context.state !== 'running') {
-    Pizzicato.context.resume()
-  }
-
-  document.querySelector("#mis").textContent = 0
-
-  disableButtons()
-  restartMusic.disabled = true
-  startMusic.disabled = true
+restartMusic.disabled = true;
+startMusic.disabled = true;
+stopMusic.disabled = true;
+startMusic.textContent = "LOADING";
 
 
-  
 
-  bassGuitar = new Pizzicato.Sound(
-    {
-      source: "file",
-      options: {
-        path: [
-          static_url + "attenter/sounds/04_Bass.mp3",
-          static_url + "attenter/sounds/04_Bass.m4a",
-          static_url + "attenter/sounds/04_Bass.wav",
-          static_url + "attenter/sounds/04_Bass.opus",
-        ],
-      },
-    },
-    () => {
-      // Sound loaded!
-      bassGuitar.on("stop", () => {
-        enableButtons();
-        restartMusic.disabled = false;
-        startMusic.disabled = false;
-      });
-
-      bassGuitar.on("play", () => {
-        setTimeout(() => {
-          bassGuitar.stop();
-          inputN();
-        }, 61 * 1000);
-        x = getRandomIntInclusive(3, 10);
-        createCheck(x);
-
-        console.log("всего помех", x);
-        let n = 0;
-        let arr = [];
-        while (n < x) {
-          // выводит 0, затем 1, затем 2
-          delay = getRandomIntInclusive(3, 60);
-          for (let b = 0; b < arr.length; b++) {
-            if (arr[b] === delay) {
-              console.log("b", b, delay);
-              delay = getRandomIntInclusive(1, 60);
-              b = -1;
-            }
-          }
-          arr.push(delay);
-          att = getRandomIntInclusive(1, 100) / 100;
-          rel = getRandomIntInclusive(1, 100) / 100;
-          fr = getRandomIntInclusive(200, 600);
-          vol = getRandomIntInclusive(200, 250) / 1000;
-          pomehi.push([delay, vol, att, rel, fr]);
-          console.log(
-            "на ",
-            delay,
-            ", громкость: ",
-            vol,
-            ", атака: ",
-            att,
-            ", релиз: ",
-            rel,
-            ", частота: ",
-            fr
-          );
-          delaySin(delay, att, rel, fr, vol, n);
-          n++;
-        }
-        console.log(arr);
-        savePomehi();
-        pomehi = [];
-      });
-      
-      bassGuitar.play()
-    }
-  );
-  
-  
-
-  sineWave = new Pizzicato.Sound({
-    source: "wave",
+bassGuitar = new Pizzicato.Sound(
+  {
+    source: "file",
     options: {
-      frequency: 440,
-      volume: 0.03,
+      path: [static_url + "attenter/sounds/04_Bass.mp3"],
     },
-  });
+  },
+  () => {
+    // Sound loaded!
+    startMusic.disabled = false;
+    startMusic.textContent = "СТАРТ";
+    console.log("sound file loaded!");
 
-  sineWave.on("play", function () {
-    //...
-    // addSin()
-    setTimeout(() => {
-      sineWave.stop();
-    }, 50);
-  });
+    bassGuitar.on("stop", () => {
+      restartMusic.disabled = false;
+      startMusic.disabled = false;
+      stopMusic.disabled = true;
+    });
 
+    bassGuitar.on("play", () => {
+      stopMusic.disabled = false;
+      restartMusic.disabled = true;
+      startMusic.disabled = true;
+      bassTimer = setTimeout(() => {
+        bassGuitar.stop();
+      }, 61 * 1000);
+    });
+  }
+);
 
-  
+sineWave = new Pizzicato.Sound({
+  source: "wave",
+  options: {
+    frequency: 440,
+    volume: 0.03,
+  },
 });
 
-function delaySin(delay, att, rel, fr, vol, n) {
+sineWave.on("play", function () {
+  //...
+  // addSin()
   setTimeout(() => {
-    sineWave.attack = att;
-    sineWave.release = rel;
-    sineWave.frequency = fr;
-    sineWave.volume = vol;
+    sineWave.stop();
+  }, 50);
+});
 
-    
-    sineWave.play();
-    checkPomeha(n);
-    console.log("sinStart");
-    console.log(
-      "на ",
-      delay,
-      ", громкость: ",
-      vol,
-      ", атака: ",
-      att,
-      ", релиз: ",
-      rel,
-      ", частота: ",
-      fr
-    );
-  }, delay * 1000);
+
+
+
+
+startMusic.addEventListener("click", function () {
+  if (Pizzicato.context.state !== "running") {
+    Pizzicato.context.resume();
+  }
+  createPomehi()
+  readAndPlayPomehi()
+  bassGuitar.play();
+  document.querySelector("#mis").textContent = 0;
+  console.log("sound fileing!");
+});
+
+restartMusic.addEventListener("click", function () {
+  if (Pizzicato.context.state !== "running") {
+    Pizzicato.context.resume();
+  }
+  check.innerHTML = checkForRestart;
+  readAndPlayPomehi()
+  bassGuitar.play();
+});
+
+stopMusic.addEventListener("click", function () {
+  for (var i = 0; i < timeoutsPomehi.length; i++) {
+    clearTimeout(timeoutsPomehi[i]);
+  }
+  clearTimeout(bassTimer);
+  bassGuitar.stop();
+  // fillCheck () // find not BAD or GOOD and ADD 'NOT' !!!!!!!!!!!!!!!!!!!!!!!
+  checkForRestart = check.innerHTML;
+  check.innerHTML = "";
+
+
+});
+//quick reset of the timer array you just cleared
+
+
+
+
+
+function delaySin(delay, att, rel, fr, vol, n) {
+  timeoutsPomehi.push(
+    setTimeout(() => {
+      sineWave.attack = att;
+      sineWave.release = rel;
+      sineWave.frequency = fr;
+      sineWave.volume = vol;
+
+      sineWave.play();
+      checkPomeha(n);
+      console.log("sinStart");
+      console.log(
+        "на ",
+        delay,
+        ", громкость: ",
+        vol,
+        ", атака: ",
+        att,
+        ", релиз: ",
+        rel,
+        ", частота: ",
+        fr
+      );
+    }, delay * 1000)
+  );
 }
 
 function checkPomeha(n) {
@@ -187,47 +152,90 @@ function checkPomeha(n) {
   }, 980);
 }
 
+const isKey = () => {
+  document.querySelector("#check" + String(isPomeha)).textContent += "GOOD_";
+  keyDown = true;
+}
+
+const isNotKey = () => {
+  document.querySelector("#mis").textContent =
+      parseInt(document.querySelector("#mis").textContent) + 1;
+
+}
+
+
+
+
 document.addEventListener("keydown", function (e) {
   if (e.keyCode == 32 && isPomeha > -1) {
-    document.querySelector("#check" + String(isPomeha)).textContent += "GOOD_";
-    keyDown = true;
+    isKey()
   }
   if (e.keyCode == 32 && isPomeha == -1) {
-    document.querySelector("#mis").textContent =
-      parseInt(document.querySelector("#mis").textContent) + 1;
+    isNotKey()
   }
 });
 
-restartMusic.addEventListener("click", function () {
-  if (Pizzicato.context.state !== 'running') {
-    Pizzicato.context.resume()
+document.addEventListener("dblclick", function (e) {
+    console.log('dc')
+
+    if (isPomeha > -1) {
+      isKey()
+    }
+    if (isPomeha == -1) {
+      isNotKey()
+    }
+    
+});
+
+
+
+
+function createPomehi() {
+  x = getRandomIntInclusive(3, 10);
+  createCheck(x);
+  console.log("всего помех", x);
+  let n = 0;
+  let arr = [];
+  while (n < x) {
+    // выводит 0, затем 1, затем 2
+    delay = getRandomIntInclusive(3, 60);
+    for (let b = 0; b < arr.length; b++) {
+      if (arr[b] === delay) {
+        console.log("b", b, delay);
+        delay = getRandomIntInclusive(1, 60);
+        b = -1;
+      }
+    }
+    arr.push(delay);
+    att = getRandomIntInclusive(1, 100) / 100;
+    rel = getRandomIntInclusive(1, 100) / 100;
+    fr = getRandomIntInclusive(200, 600);
+    vol = getRandomIntInclusive(200, 250) / 1000;
+    pomehi.push([delay, vol, att, rel, fr]);
+    console.log(
+      "на ",
+      delay,
+      ", громкость: ",
+      vol,
+      ", атака: ",
+      att,
+      ", релиз: ",
+      rel,
+      ", частота: ",
+      fr
+    );
+    // delaySin(delay, att, rel, fr, vol, n);
+    n++;
   }
+  console.log(arr);
+  savePomehi();
+  pomehi = [];
+}
 
 
-
-
-  disableButtons();
-  restartMusic.disabled = true;
-  startMusic.disabled = true;
+function readAndPlayPomehi(){
   pomehi = JSON.parse(localStorage.getItem("pomehi"));
-
-  bassGuitar = new Pizzicato.Sound(
-    static_url + "attenter/sounds/04_Bass.mp3",
-    function () {
-      // Sound loaded!
-
-      bassGuitar.on("stop", () => {
-        enableButtons();
-        restartMusic.disabled = false;
-        startMusic.disabled = false;
-      });
-
-      bassGuitar.on("play", () => {
-        setTimeout(() => {
-          bassGuitar.stop();
-          inputN();
-        }, 61 * 1000);
-        x = pomehi.length;
+  x = pomehi.length;
 
         console.log("всего помех", x);
         let n = 0;
@@ -256,33 +264,30 @@ restartMusic.addEventListener("click", function () {
           n++;
         }
         pomehi = [];
-      });
-      Pizzicato.context.resume();
-      bassGuitar.play();
-    }
-  );
+}
 
-  sineWave = new Pizzicato.Sound({
-    source: "wave",
-    options: {
-      frequency: 440,
-      volume: 0.03,
-    },
-  });
 
-  sineWave.on("play", function () {
-    //...
-    // addSin()
-    setTimeout(() => {
-      sineWave.stop();
-    }, 50);
-  });
-});
+
+
 // stopMusic.addEventListener("click", function () {
 //     bassGuitar.stop();
 //     sineWave.stop();
 
 // })
+
+function createCheck(x) {
+  for (let g = 0; g < x; g++) {
+    check.insertAdjacentHTML(
+      "beforeend",
+      "<p id = check" +
+        String(g) +
+        "><strong>" +
+        String(g + 1) +
+        "</strong> ---  </p>"
+    );
+  }
+}
+
 function savePomehi() {
   localStorage.setItem("pomehi", JSON.stringify(pomehi));
 }
@@ -304,93 +309,3 @@ function getRandomIntInclusive(min, max) {
 //     // setTimeout(theOneFunc, 8 * 1000, 2);
 
 // }
-
-function inputN() {}
-
-button1.addEventListener("click", function () {
-  if (x === 1) {
-    button1.style.background = "green";
-  } else {
-    button1.style.background = "red";
-  }
-});
-button2.addEventListener("click", function () {
-  if (x === 2) {
-    button2.style.background = "green";
-  } else {
-    button2.style.background = "red";
-  }
-});
-button3.addEventListener("click", function () {
-  if (x === 3) {
-    button3.style.background = "green";
-  } else {
-    button3.style.background = "red";
-  }
-});
-button4.addEventListener("click", function () {
-  if (x === 4) {
-    button4.style.background = "green";
-  } else {
-    button4.style.background = "red";
-  }
-});
-button5.addEventListener("click", function () {
-  if (x === 5) {
-    button5.style.background = "green";
-  } else {
-    button5.style.background = "red";
-  }
-});
-button6.addEventListener("click", function () {
-  if (x === 6) {
-    button6.style.background = "green";
-  } else {
-    button6.style.background = "red";
-  }
-});
-button7.addEventListener("click", function () {
-  if (x === 7) {
-    button7.style.background = "green";
-  } else {
-    button7.style.background = "red";
-  }
-});
-button8.addEventListener("click", function () {
-  if (x === 8) {
-    button8.style.background = "green";
-  } else {
-    button8.style.background = "red";
-  }
-});
-button9.addEventListener("click", function () {
-  if (x === 9) {
-    button9.style.background = "green";
-  } else {
-    button9.style.background = "red";
-  }
-});
-button10.addEventListener("click", function () {
-  if (x === 10) {
-    button10.style.background = "green";
-  } else {
-    button10.style.background = "red";
-  }
-});
-button11.addEventListener("click", function () {
-  if (x === 11) {
-    button11.style.background = "green";
-  } else {
-    button11.style.background = "red";
-  }
-});
-function disableButtons() {
-  for (let h = 1; h < 12; h++) {
-    document.getElementById("n" + String(h)).disabled = true;
-  }
-}
-function enableButtons() {
-  for (let h = 1; h < 12; h++) {
-    document.getElementById("n" + String(h)).disabled = false;
-  }
-}
