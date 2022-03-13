@@ -403,3 +403,31 @@ button.delete {
   padding: 0.5rem 0.75rem;
   font-size: 0.8rem;
 }
+
+
+.main_block {
+    font-size:medium;
+    width: auto;
+    height: auto;
+    margin: 10px 0px 0px 10px;
+    border-radius: 25% 10%;
+    /* solid green; */
+    /* padding: 10px; */
+    cursor: pointer;
+}
+
+.hide_block {
+    text-indent: 1.5em;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size:medium;
+    text-align:justify;
+    width: auto;
+    height: auto;
+    margin: 10px 0px 0px 10px;
+    border-radius: 25% 10%;
+    /* solid rgb(17, 41, 223); */
+    /* border: 2px solid rgb(50, 9, 235); */
+    /* padding: 10px; */
+    display: none;
+}
