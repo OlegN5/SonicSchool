@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'gyms.apps.GymsConfig',
     'attenter.apps.AttenterConfig',
+    'mixer.apps.MixerConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
 ]

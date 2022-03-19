@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+<!-- {% load static %} -->
+{% block head %} 
+<!-- <script> var static_url = "{% get_static_prefix %}" </script> -->
+<link rel="stylesheet" href="{% static 'mixer/assets/styles.css' %}" />
+<script src="https://unpkg.com/vue@next"></script>
+<!-- <script src="./assets/vue.global.js"></script> -->
+
+{% endblock head %}
+
+{% block content %}
+  <div class="content-section">
+    <div id='app'>
+      <h2>${ productInfo.name }</h2>
+      <hr>
+      <p>${ productInfo.info }</p>
+      <button class='button' type='button' @click="showSettingsTrack">${ gym.buttonSettingsTrack }</button>
+      <button class='button' type='button' @click="showSettingsNoise" disabled="true">${ gym.buttonSettingsNoise }</button>
+      
+      <form v-show="gym.settingsTrack">
+          <p>${ productInfo.infoIn }</p>
+              <ul v-for="(track, index) in gym.items" :value="index">
+                  <div class="row">
+                      <h2>${ track.title }</h3>
+                  </div>
+                      <li v-for="(part, indexP) in track.parts" :value="indexP">
+                          <div class=“container”>
+                          <div class="row">
+                              <div class='column'>
+                                  ${ part.name }: ${part.type}
+                              </div>
+                              <div class='column'>
+                                  <input type="checkbox" 
+                                      v-model="part.enabled"
+                                      @change='checkedPartChange(indexP)'>
+                              </div>
+                              <div class='column'>
+                                  
+
+                                  <div v-if="part.enabled" v-for="(setting, key, indexS) in part.settings" :value="indexS">
+                                  <!-- info -->
+                                      <!-- <p>${index}  ${key}:  ${setting}</p> -->
+                                      <!-- <p>${setting.typeTag}</p>
+                                      <p>${setting.type}</p> -->
+                                      <p v-if="part.check!=''" class="check">${part.check}</p>
+
+                                      <div v-if="setting.type==='minmax'">
+                                          <label for="'min'+indexS">${key}Min</label>
+                                          <input :type="setting.typeTag" :value="setting.min" :id="'min'+indexS" v-model="setting.min">
+                                          <label for="'max'+indexS">${key}Max</label>
+                                          <input :type="setting.typeTag" :value="setting.max" :id="'max'+indexS" v-model="setting.max">
+
+                                      </div>
+                                      <div v-if="setting.type==='controller'">
+                                          <!-- <p>${indexP}</p> -->
+                                          <input :type="setting.typeTag" :value="setting.value" v-model="setting.value" @change="volumePartChange(indexP)" :disabled="gym.checkOn">
+                                          
+                                      </div>
+
+
+                                  </div> 
+                              </div>
+                          </div>
+                          </div>
+                      </li>
+              </ul>
+      </form>
+      <p></p>
+      <p>${ gym.note }</p>
+      <button class='buttonA' type='button' @click="createAutoMix">СОЗДАТЬ РЕФЕРЕНС</button>
+      <button class='button' type='button' @click="playStart">PLAY</button>
+      <button class='button' type='button' @click="playStop">STOP</button>
+      <br>
+      <p></p>
+      <label class="switch">
+          <input type="checkbox" @change="VolumeAB" v-model="gym.checkOn" id="ab" >
+          <span class="slider round"></span>
+          
+      </label>
+      <p>A/B сравнение А - Ваш микс, В - референс.</p>
+      <br>
+      <p>Проверка соответствия Вашего баланса и баланса референса.</p>
+      <!-- <button class='buttonA' type='button' @click="playStopAutoMix">STOP AUTO MIX</button> -->
+      <button class='buttonC' type='button' @click="checkMix">Проверить</button>
+
+  </div>   
+
+     
+
+    {% csrf_token %}
+
+  </div>
+{% endblock content %}
+
+{% block scripts %}
+  <script> var static_url = "{% get_static_prefix %}" </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.4/Pizzicato.js"></script>
+  <script type="text/javascript" src="{% static 'mixer/js/script.js' %}"></script>
+  <script>app.mount('#app')</script>
+
+  
+{% endblock scripts %}
+

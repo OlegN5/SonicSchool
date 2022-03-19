@@ -1,0 +1,153 @@
+
+div#app .row {
+  display: grid !important;
+  grid-template-columns: 110px 10% 50% !important;
+  /* vertical-align: middle; */
+  /* margin: 5px; */
+}
+
+div#app .button {
+  background-color: #0e59da !important;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: small;
+
+}
+#app .buttonA {
+
+  background-color: #0ef107;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size:x-small;
+
+
+}
+
+#app .buttonC {
+
+  background-color: #e107f5;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 10px;
+
+
+}
+
+
+
+
+
+#app .disabledButton {
+  background-color: #11e42d;
+  cursor: not-allowed;
+}
+
+div#app input {
+  width: 100%;
+  height: auto;
+  /* margin-bottom: 10px; */
+}
+
+#app label {
+  /* float: left; */
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+  
+}
+
+
+
+
+/* The switch - the box around the slider */
+#app .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+#app .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+#app .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(22, 125, 243);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+#app .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+#app input:checked + .slider {
+  background-color: #0ef740;
+}
+
+#app input:focus + .slider {
+  box-shadow: 0 0 1px #06e764;
+}
+
+#app input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+#app .slider.round {
+  border-radius: 34px;
+}
+
+#app .slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+
+
+.check {
+  font-size: xx-small;
+}
+
+
+
+
+
+
+
+
+
+
