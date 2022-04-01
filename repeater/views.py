@@ -8,11 +8,15 @@ import os
 import random
 import json
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
+
+
+
 
 #fileNameRec = os.path.join(settings.BASE_DIR,'test.wav')
 
 # Create your views here.
-
+@login_required
 class Index(View):
     def home(request):
         notes = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22]
