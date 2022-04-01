@@ -8,7 +8,7 @@ urlpatterns = [
 
     path('', repeater_views.Index.index, name='index'), 
        
-    path('home/', repeater_views.Index.home, name='home'), 
+    path('home/', repeater_views.Index.home, name='homeRepeater'), 
 
     path('home/get_recorded_audio/',
         repeater_views.Index.get_recorded_audio, name='get_recorded_audio'),

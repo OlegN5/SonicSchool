@@ -29,7 +29,7 @@ class Index(View):
         return render(request, 'repeater/home.html', context=context)
 
     def index(request):
-        return redirect('home')
+        return redirect('homeRepeater')
 
     def get_recorded_audio(request):
         audio_file = request.body
