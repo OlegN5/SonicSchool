@@ -189,7 +189,7 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-LOGIN_REDIRECT_URL = 'repeater-home'
+LOGIN_REDIRECT_URL = 'gyms-home'
 
 LOGIN_URL = 'login'
 

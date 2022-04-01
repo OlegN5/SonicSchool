@@ -22,33 +22,57 @@
     <div class="main_block">свернуть</div>
     <hr>
     <hr>
-
-    <h3>Тренажеры</h3>
-      
+    {% if user.is_authenticated %}
+    {% else %}
+    <h7>Для работы с тренажерами необходимо просто авторизоваться</h7>
+    {% endif %}
+    <h3>Тренажеры:</h3>
       <p class='text-muted'>Выберите тренажер: 
         <ul class="list-group">
+          {% if user.is_authenticated %}
           <a class="list-group-item list-group-item-light" href="/repeater">Тренажер ЗВУКОВЫСОТНОСТЬ</a>
+          {% else %}
+          <a class="list-group-item list-group-item-light">Тренажер ЗВУКОВЫСОТНОСТЬ</a>
+          {% endif %}
           <div class="main_block">о тренажере подробнее</div>
           <div class="hide_block">Развитие чувствительности к высоте звука. Слушайте, повторяйте, смотрите результат.</div>
           
+          {% if user.is_authenticated %}
           <a class="list-group-item list-group-item-light" href="/volumer">Тренажер ГРОМКОСТЬ</a>
+          {% else %}
+          <a class="list-group-item list-group-item-light">Тренажер ГРОМКОСТЬ</a>
+          {% endif %}
           <div class="main_block">о тренажере подробнее</div>
           <div class="hide_block">Развитие ощущения громкости звука. Слушайте, сравнивайте, выбирайте тот, который громче.</div>
           
+          {% if user.is_authenticated %}
           <a class="list-group-item list-group-item-light" href="/wider">Тренажер СТЕРЕОБАЗА</a>
+          {% else %}
+          <a class="list-group-item list-group-item-light">Тренажер СТЕРЕОБАЗА</a>
+          {% endif %}
           <div class="main_block">о тренажере подробнее</div>
           <div class="hide_block">Развитие восприятия ширины звуковой картины. Слушайте, сравнивайте, выбирайте тот, который левее.</div>
           
+          {% if user.is_authenticated %}
           <a class="list-group-item list-group-item-light" href="/attenter">Тренажер ВНИМАНИЕ</a>
+          {% else %}
+          <a class="list-group-item list-group-item-light">Тренажер ВНИМАНИЕ</a>
+          {% endif %}
           <div class="main_block">о тренажере подробнее</div>
           <div class="hide_block">Слушайте, как услышите лишний призвук - двойной клик, либо "Пробел" (на клавиатуре)</div>
           
+          {% if user.is_authenticated %}
           <a class="list-group-item list-group-item-light" href="/mixer">Тренажер БАЛАНС</a>
+          {% else %}
+          <a class="list-group-item list-group-item-light">Тренажер БАЛАНС</a>
+          {% endif %}
+
           <div class="main_block">о тренажере подробнее</div>
           <div class="hide_block">Настройте баланс по референсу и проверьте себя, насколько точно Вы смогли это сделать</div>
           
         </ul>
       </p>
+    
 
   </div>
 
