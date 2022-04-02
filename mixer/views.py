@@ -9,5 +9,8 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
+    context = {
+        'title': 'MIXER'
+    }
     # print (dir(request))
-    return render (request, 'mixer/home.html')
+    return render (request, 'mixer/home.html', context=context)

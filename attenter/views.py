@@ -10,4 +10,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def index(request):
     # print (dir(request))
-    return render (request, 'attenter/home.html')
+    context = {
+        'title': 'ATTENTER'
+    }
+    return render (request, 'attenter/home.html', context)

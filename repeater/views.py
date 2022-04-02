@@ -25,6 +25,7 @@ class Index(View):
         print (note)
            
         context = {
+            'title': 'REPEATER',
             'wav': str(note) + '.wav',
             'mp3': str(note) + '.mp3',
              # 'message_2u': 'message_2u'

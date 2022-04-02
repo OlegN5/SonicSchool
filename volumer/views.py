@@ -35,5 +35,6 @@ class result(View):
             'result': result,
             'volume1': volume1,
             'volume2': volume2,
-            'status':'ok'
+            'status':'ok',
+            'messages':'!!!messages!!!'
             }, status=200)
