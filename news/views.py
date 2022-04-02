@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import ListView, DetailView
 from .models import Post
 # Create your views here.
 
@@ -14,10 +15,6 @@ from .models import Post
 #     'date': '1 Марта, 2022'
 # }]
 
-
-
-
-
 def index(request):
     # print (dir(request))
     context = {
@@ -25,5 +22,18 @@ def index(request):
     }
     return render (request, 'news/home.html', context)
     
+class PostListView(ListView):
+    model = Post
+    template_name = 'news/home.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
+
+class PostDetailView(DetailView):
+    model = Post
+    
+
+
+
 def test(request):
     return HttpResponse ('<h1>TEST page</h1>')
