@@ -79,8 +79,7 @@ button1.onclick = function() {
         result.textContent = 'NO...'
     } 
     sendResault()
-    play1BtnClick = 0
-    play1BtnClick = 0   
+     
 }
 
 button2.onclick = function() {
@@ -91,8 +90,7 @@ button2.onclick = function() {
     }
 
     sendResault()
-    play1BtnClick = 0
-    play1BtnClick = 0 
+    
 }
 
 
@@ -116,7 +114,7 @@ function extractFileName (path) {
 function sendResault() {
 
     var csrfToken = $("input[name=csrfmiddlewaretoken]").val()
-   
+      
 
     $.ajax({
         url: '/volumer/result/',
@@ -136,6 +134,8 @@ function sendResault() {
             volume2.textContent = response.volume2
             result.textContent = response.result
             soundRnd()
+            play1BtnClick = 0
+            play2BtnClick = 0
         }
     })
 }
