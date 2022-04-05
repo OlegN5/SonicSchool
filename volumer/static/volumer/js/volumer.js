@@ -8,6 +8,9 @@ const button2 = document.querySelector('#button2');
 const src1 = document.querySelector('.src1');
 const src2 = document.querySelector('.src2');
 
+
+var play1BtnClick = 0
+var play2BtnClick = 0
 var sound01
 var sound02
 var x
@@ -51,11 +54,21 @@ function soundRnd(){
 }
 
 play1.onclick = function() {
+    result.textContent = ''
+    volume1.textContent = ''
+    volume2.textContent = ''
+
     sound01.play()
+    play1BtnClick +=1
 }
 
 play2.onclick = function() {
+    result.textContent = ''
+    volume1.textContent = ''
+    volume2.textContent = ''
+
     sound02.play()
+    play2BtnClick +=1
 }
 
 
@@ -66,6 +79,8 @@ button1.onclick = function() {
         result.textContent = 'NO...'
     } 
     sendResault()
+    play1BtnClick = 0
+    play1BtnClick = 0   
 }
 
 button2.onclick = function() {
@@ -76,6 +91,8 @@ button2.onclick = function() {
     }
 
     sendResault()
+    play1BtnClick = 0
+    play1BtnClick = 0 
 }
 
 
@@ -108,7 +125,9 @@ function sendResault() {
             'volume2': y,
             'result': result.textContent,
             'sound1': extractFileName (sound1src),
-            'sound2': extractFileName (sound2src)
+            'sound2': extractFileName (sound2src),
+            'play1BtnClick': play1BtnClick,
+            'play2BtnClick': play2BtnClick
         },
         type: 'post',
         dataType: 'json',
