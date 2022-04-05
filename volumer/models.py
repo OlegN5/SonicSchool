@@ -12,6 +12,7 @@ class Score(models.Model):
     note2 = models.CharField(max_length=10)
     volume2 = models.FloatField(default=0)
     click2 = models.IntegerField(default=0)
+    result = models.CharField(max_length=6)
     timer = models.DateTimeField(default='2012-09-04 06:00:00.000000-08:00')
 
 

@@ -7,6 +7,10 @@ const button1 = document.querySelector('#button1');
 const button2 = document.querySelector('#button2');
 const src1 = document.querySelector('.src1');
 const src2 = document.querySelector('.src2');
+const items = document.querySelector('#items');
+const clicks = document.querySelector('#clicks');
+const resultOk = document.querySelector('#resultOk');
+const resultErr = document.querySelector('#resultErr');
 
 
 var play1BtnClick = 0
@@ -133,9 +137,15 @@ function sendResault() {
             volume1.textContent = response.volume1
             volume2.textContent = response.volume2
             result.textContent = response.result
-            soundRnd()
+            items.textContent = response.items
+            clicks.textContent = response.clicks
+            resultOk.textContent = response.resultOk
+            resultErr.textContent = response.resultErr
             play1BtnClick = 0
             play2BtnClick = 0
+
+
+            soundRnd()
         }
     })
 }
