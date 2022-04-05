@@ -1,4 +1,3 @@
-from tkinter import N
 from django.shortcuts import render
 from django.http import HttpResponse, request, JsonResponse
 from django.views.generic import View
