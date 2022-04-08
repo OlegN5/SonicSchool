@@ -62,8 +62,29 @@ const app = Vue.createApp({
 
     nItems = getRandomIntInclusive(2, 5)
     for (var i = 0; i < nItems+1; i++) {
-      this.items.push(this.templates[getRandomIntInclusive(0, 11)])
+      m = getRandomIntInclusive(0, 11)
+      this.items.push(this.templates[m])
+
+      sound[i] = new Pizzicato.Sound(
+        {
+          source: "file",
+          options: { path: static_url + "intonation/sounds/" + this.items[i].file + '.wav'},
+        },
+        function () {
+          console.log("sound file loaded!");
+        }
+      );
+
+
+
+
+     
    }
+
+   
+
+
+
     
   },
   computed: {
@@ -75,22 +96,20 @@ const app = Vue.createApp({
   methods: {
    
     playItem: (function(e){
-      // e.target.classList.add(`selected`);
-      e.target.value
-      console.log('e.target.value', e.target.value)
+
+
+      if (Pizzicato.context.state !== "running") {
+        Pizzicato.context.resume();
+      }
+      
+      sound[e.target.value].play();
+      
 
 
 
-      sound[e.target.value] = new Pizzicato.Sound(
-        {
-          source: "file",
-          options: { path: static_url + "intonation/sounds/" + this.items[e.target.value].file + '.wav'},
-        },
-        function () {
-          console.log("sound file loaded!");
-          sound[e.target.value].play();
-        }
-      );
+
+
+     
 
     
 
