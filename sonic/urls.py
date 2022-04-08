@@ -32,6 +32,7 @@ urlpatterns = [
     path('wider/', include('wider.urls')),
     path('attenter/', include('attenter.urls')),
     path('mixer/', include('mixer.urls')),
+    path('intonation/', include('intonation.urls')),
     path('', include('gyms.urls')),
     
     # path('register/', users_views.register, name='register'),

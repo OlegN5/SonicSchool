@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'gyms.apps.GymsConfig',
     'attenter.apps.AttenterConfig',
     'mixer.apps.MixerConfig',
+    'intonation.apps.IntonationConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
 ]

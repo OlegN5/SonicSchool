@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id='app'>
+  <section class="tasks">
+    <h1 class="tasks__title">To do list</h1>
+    
+    <ul class="tasks__list">
+      <li class="tasks__item">learn HTML</li>
+      <li class="tasks__item">learn CSS</li>
+      <li class="tasks__item">learn JavaScript</li>
+      <li class="tasks__item">learn PHP</li>
+      <li class="tasks__item">stay alive</li>
+    </ul>
+  </section>
+
+
+  
+  
+
+</div>   
+<!-- {% csrf_token %}
+     -->     
+{% endblock content %}
+
+{% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script> var static_url = "{% get_static_prefix %}" </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.4/Pizzicato.js"></script>
+  <script type="text/javascript" src="{% static 'intonation/js/dragDrop.js' %}"></script>
+  <script type="text/javascript" src="{% static 'intonation/js/script.js' %}"></script>
+  <script>app.mount('#app')</script>
+{% endblock scripts %}
+
