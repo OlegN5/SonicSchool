@@ -12,6 +12,8 @@ for (const task of taskElements) {
   tasksListElement.addEventListener(`dragend`, (evt) => {
     evt.target.classList.remove(`selected`);
   });
+
+  // ___
   
   const getNextElement = (cursorPosition, currentElement) => {
     const currentElementCoord = currentElement.getBoundingClientRect();
@@ -23,12 +25,17 @@ for (const task of taskElements) {
     
     return nextElement;
   };
+
+  // __
   
   tasksListElement.addEventListener(`dragover`, (evt) => {
     evt.preventDefault();
     
     const activeElement = tasksListElement.querySelector(`.selected`);
     const currentElement = evt.target;
+
+    console.log('activeElement', activeElement);
+    console.log('currentElement', currentElement);
     const isMoveable = activeElement !== currentElement &&
       currentElement.classList.contains(`tasks__item`);
       

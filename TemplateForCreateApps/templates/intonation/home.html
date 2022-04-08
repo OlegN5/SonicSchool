@@ -1,4 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %} 
+<!-- <script> var static_url = "{% get_static_prefix %}" </script> -->
+<link rel="stylesheet" href="{% static 'intonation/assets/styles.css' %}" />
+<script src="https://unpkg.com/vue@next"></script>
+<!-- <script src="./assets/vue.global.js"></script> -->
+
+{% endblock head %}
 
 {% block content %}
 <div id='app'>
@@ -8,8 +17,7 @@
   
 
 </div>   
-<!-- {% csrf_token %}
-     -->     
+{% csrf_token %}   
 {% endblock content %}
 
 {% block scripts %}
