@@ -13,10 +13,11 @@
 <div id='app'>
   <section class="tasks">
     <h1 class="tasks__title">${ productInfo.name }</h1>
+    <hr>
     
     <ul class="tasks__list" >
-      <li v-for="(item, indexLi) in items" :value="indexLi"
-      class="tasks__item" 
+      <li v-for="(item, indexLi) in items" :value="indexLi" :id="'li'+indexLi"
+      class="tasks__item loaded" 
       draggable = true
       @dragstart="dragstart"
       @dragend="dragend"
@@ -25,7 +26,13 @@
       ${ item.name }
     </li>
     </ul>
+    <button class="btn-info btn-sm mt-1 mb-1 play" @click="play">Играть все</button>
+    <div class="slider-wrapper">
+      <input type="range" id="MasterVolume" value="60" @click="volumeChange">
+    </div> 
   </section>
+
+  
 
 </div>   
 {% csrf_token %}

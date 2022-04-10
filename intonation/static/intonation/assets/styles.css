@@ -29,10 +29,13 @@
     padding: 0;
     
     list-style: none;
+    position: relative;
+    left: 0;
+    top: 0;
   }
   
   .tasks__item {
-    max-width: 250px;
+    max-width: 200px;
     margin-bottom: 10px;
     padding: 5px;
     
@@ -51,4 +54,61 @@
   
   .selected {
     opacity: 0.6;
+  }
+
+  .loaded {
+    opacity: 0.3;
+    position: relative;
+  }
+  .loaded::before {
+
+    content: "loaded";
+    color: rgb(91, 234, 14);
+
+
+    position: absolute;
+    top: 4;
+    left: 25px;
+
+  }
+
+  .loaded::after {
+
+    content: "loaded";
+    color: rgb(91, 234, 14);
+
+
+    position: absolute;
+    top: 4;
+    right: 25px;
+
+  }
+
+
+  .tasks{
+    position: relative;
+  }
+
+  .slider-wrapper {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    /* display: inline-block; */
+    width: 20px;
+    height: 150px;
+    padding: 0;
+  }
+
+
+
+  .slider-wrapper input {
+    width: 150px;
+    height: 20px;
+    margin: 0;
+    transform-origin: 75px 75px;
+    transform: rotate(-90deg);
+  }
+
+  .play {
+    position: relative;
   }

@@ -53,39 +53,49 @@ const app = Vue.createApp({
   watch: {
     items: function () {
       console.log(this.items);
-
-
     }
     
   },
   created: function () {
 
+ 
+
     nItems = getRandomIntInclusive(2, 5)
+    var a =[]
     for (var i = 0; i < nItems+1; i++) {
       m = getRandomIntInclusive(0, 11)
       this.items.push(this.templates[m])
+
+      
 
       sound[i] = new Pizzicato.Sound(
         {
           source: "file",
           options: { path: static_url + "intonation/sounds/" + this.items[i].file + '.wav'},
         },
-        function () {
-          console.log("sound file loaded!");
+        () => {
+          console.log("sound file loaded!", i);
+          
+
+          this.$el.querySelector('.loaded').classList.remove('loaded')
+          // console.log('this.$el',this.$el.querySelector('#li0'))
+           
         }
+
+        
       );
+      
+      sound[i].volume = getRandomIntInclusive(30, 100)/100
+      this.items[i].volume = sound[i].volume
+      console.log(sound[i].volume)
 
-
-
-
-     
+      // sound[i].play()
    }
 
+  
    
 
-
-
-    
+   
   },
   computed: {
     //кэшируемые методы
@@ -94,6 +104,31 @@ const app = Vue.createApp({
   },
   
   methods: {
+    play() {
+
+      
+    console.log(this.$el)
+
+
+      for (var i=0;i < sound.length; i++) {
+       
+        sound[i].play(i*1.5 , 0)
+
+       
+
+
+      }
+      
+      
+
+
+      
+
+    },
+
+    volumeChange() {    
+      Pizzicato.volume = this.$el.querySelector('#MasterVolume').value
+    },
    
     playItem: (function(e){
 
@@ -101,27 +136,11 @@ const app = Vue.createApp({
       if (Pizzicato.context.state !== "running") {
         Pizzicato.context.resume();
       }
-      
+      console.log(sound[e.target.value].volume)
       sound[e.target.value].play();
       
-
-
-
-
-
-     
-
-    
-
-      
-
-
-
-
     }),
 
-
-    
     dragstart: (function(e){
       e.target.classList.add(`selected`);
     }),
@@ -145,10 +164,7 @@ const app = Vue.createApp({
         
       if (!isMoveable) {
         return;
-      }
-
-      
-      
+      } 
       const nextElement = getNextElement(e.clientY, currentElement);
       
       if (
@@ -161,11 +177,7 @@ const app = Vue.createApp({
        
       this.$el.querySelector(`.tasks__list`).insertBefore(activeElement, nextElement);
     }),
-    
-
   }
-
-
 });
 
 function getRandomIntInclusive(min, max) {
