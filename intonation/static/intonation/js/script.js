@@ -55,8 +55,7 @@ const app = Vue.createApp({
   },
   created: function () {
     nItems = getRandomIntInclusive(2, 5)
-    var a =[]
-    for (var i = 0; i < nItems+1; i++) {
+    for (let i = 0; i < nItems+1; i++) {
       m = getRandomIntInclusive(0, 11)
       this.items.push(this.templates[m])
       
@@ -69,16 +68,16 @@ const app = Vue.createApp({
         },
         () => {
           
-          console.log("sound file loaded!");
-          this.$el.querySelector('.loaded').classList.remove('loaded')
-          for(i=0;i>sound.length;i++) {
+          console.log(`sound file loaded! ${i}`);
+          this.$el.querySelector(`#li${i}`).classList.remove('loaded')
+         
             sound[i].on('end', () => {
             sound[i].detached = true
           })
           sound[i].on('stop', () => {
             sound[i].detached = true
           })
-          }
+          
 
           // console.log('this.$el',this.$el.querySelector('#li0'))      
         }
