@@ -1,122 +1,166 @@
 {% load static %}
 
 <!DOCTYPE html>
-{% if user.is_authenticated and user.profile.theme == "light" %}
-  <html lang="en" class="theme-default">
-{% elif user.is_authenticated and user.profile.theme == "dark"%}
-  <html lang="en" class="theme-girl">
-{% else %}
-  <html lang="en" class="theme-default">
-{% endif %}
+<html lang="en">
+
 <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'repeater/styles/main.css' %}">
-    {% block head %} 
-    {% endblock head %}
-    {% if title %}
-        <title>SONIC SCHOOL - {{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content=""> {% block head %} {% endblock head %} {% if title %}
+    <title>SONIC SCHOOL - {{ title }}</title>
     {% else %}
-        <title>SONIC SCHOOL</title>
+    <title>SONIC SCHOOL</title>
     {% endif %}
     <meta name="google-site-verification" content="Zl6Uc9qqScd4yULs2xgg8ADX1C2qh5-AvLDdqKodcjc" />
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'gyms/assets/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- Rocket extras -->
+    <link href="{% static 'gyms/assets/css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'gyms/assets/css/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static 'gyms/assets/css/style.css' %}" rel="stylesheet">
+    <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../docs-assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="../docs-assets/ico/favicon.png">
 </head>
+
 <body>
-  <div class="content">
-    <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top p-0" id="navbar">
+
+    <!-- Start Rocket -->
+    <!-- ********************* -->
+
+    <!-- Parallax Background
+	================================================== -->
+    <!-- image is set in the CSS as a background image -->
+    <div id="parallax"></div>
+    <!-- End Parallax Background
+	================================================== -->
+
+    <!-- Start Header
+	================================================== -->
+    <header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">
         <div class="container">
-          <a class="navbar-brand justify-content-center mr-4 ml-4" href="/"><div>SONIC</div><div>SCHOOL</div></a>
-          <button class="navbar-toggler mr-4" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="container">
-          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+                <!-- Your Logo -->
+                <a href="../" class="navbar-brand">by 2ZS</a>
+            </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav ml-auto">
-              {% if user.is_authenticated %}
-              
-                <li class="nav-item dropdown">
-                  
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" height="32" width="32" src="{{ user.profile.image.url }}" href="{% url 'profile' %}">
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'profile' %}">Профиль</a>
-                    <a class="dropdown-item" href="{% url 'post-create' %}">Создать пост в новостях</a>
-                    <a class="dropdown-item" href="/admin">Админка</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{% url 'logout' %}">Выйти</a>
-                  </div>
-                </li>
-              {% else %}
-                <a class="nav-item nav-link" href="{% url 'login' %}">Войти</a>
-                <a class="nav-item nav-link" href="{% url 'register' %}">Регистрация</a>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-        </div>
-      </nav>
-    </header>
-  
-    <main role="main" class="container">
-      <div class="row">
-        {% block container %}
-          <div class="col-md-8">
-        
-        {% if messages %}
-          {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-          {% endfor %}
-        {% endif %}
-
-          <div class="content-section">
-            {% block content %}{% endblock %}
-          </div>
-        
-        </div>
-        {% endblock container %}
-        {% block sidebar %}
-          <div class="col-md-4">
-            <div class="content-section">
-              <h3>Навигация</h3>
-              <p class='text-muted'>Разделы сайта
-                <ul class="list-group">
-                  <li class="list-group-item list-group-item-light">
-                    <a class="group-item group-item-light" href="{% url 'home' %}">Главная</a>  
+                {% if user.is_authenticated %}
+                
+                  <li class="nav-item dropdown">
+                    
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" height="32" width="32" src="{{ user.profile.image.url }}" href="{% url 'profile' %}">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{% url 'profile' %}">Профиль</a>
+                      <a class="dropdown-item" href="{% url 'post-create' %}">Создать пост в новостях</a>
+                      <a class="dropdown-item" href="/admin">Админка</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{% url 'logout' %}">Выйти</a>
+                    </div>
                   </li>
-
-                  <li class="list-group-item list-group-item-light">
-                    <a class="group-item group-item-light" href="#">Информация</a>
-                  </li>
-
-                  <li class="list-group-item list-group-item-light">
-                    <a class="group-item group-item-light" href="{% url 'news-home' %}">Новости</a>  
-                  </li>
-                  
-                  <li class="list-group-item list-group-item-light">Блог</li>
-                  <li class="list-group-item list-group-item-light">Форум</li>
-                  <li class="list-group-item list-group-item-light">Донат на развитие</li>
-
+                {% else %}
+                  <a class="nav-item nav-link" href="{% url 'login' %}">Войти</a>
+                  <a class="nav-item nav-link" href="{% url 'register' %}">Регистрация</a>
+                {% endif %}
+              </div>
+            <!-- Start Navigation -->
+            <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#hero">Home</a>
+                    </li>
+                    <li>
+                        <a href="#simulators">Simulators</a>
+                    </li>
+                    <li>
+                        <a href="#image">About</a>
+                    </li>
+                    <li>
+                        <a href="#gallery">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="#faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="#slider">Testimonials</a>
+                    </li>
+                    <li>
+                        <a href="#newsletter">Subscribe</a>
+                    </li>
                 </ul>
-              </p>
+                <ul class="nav navbar-nav navbar-right header-button">
+                    <li>
+                        <button type="button" class="btn btn-primary">Purchase Now</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- ==================================================
+	End Header -->
+
+<!-- Start MAIN
+	================================================== -->
+    <main role="main" class="container">
+        <div class="row">
+          {% block container %}
+            <div class="col-md-8">
+          
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+  
+            <div class="content-section">
+              {% block content %}{% endblock %}
             </div>
+          
           </div>
-        {% endblock sidebar %}
-      </div>
-    </main>
-  </div>
+          {% endblock container %}
+          
+        </div>
+      </main>
 
-{% block footer %}
+      <!-- ==================================================
+	End Header -->
 
-{% endblock %}
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-{% block scripts %}
-{% endblock scripts%}
+    {% block footer %}
+    {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    {% block scripts %}
+    {% endblock scripts%}
+
+    
+
 </body>
+
 </html>

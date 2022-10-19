@@ -1,107 +1,399 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-  
-    <!-- <div>
-      <legend class="border-bottom mb-4">ТРЕНАЖЕРЫ</legend>
-    </div> -->
-    <div class="main_block">О тренажерах</div>
-    <div class="hide_block">
-        <p>Тренажеры представленные на сайте способствуют 
-        улучшению навыка воспринимать поступающую извне звуковую информацию, 
-        а также извлекать из звукового хаоса современного мира нужное и полезное для себя. </p>
-        <p>Ориентировано не только для музыкантов и звукорежиссеров, 
-        но и расширяют представления людей, не связанных с работой со звуком, 
-        о многообразии звуковых явлений, которые окружают нас постоянно.</p>
-        <p>После некоторого периода практики, каждый заметит, что стал улавливать то, 
-        на что раньше не обращал внимания, на то, что проходило мимо ушей, 
-        не замечалось и не фиксировалось.</p>
-    </div>
-    <div class="main_block">Об авторе</div>
-    <div class="hide_block"></div>
-    <div class="main_block">свернуть</div>
-    <hr>
-    <hr>
-    {% if user.is_authenticated %}
-    {% else %}
-    <h7 style="color:orangered">Для работы с тренажерами необходимо просто авторизоваться</h7>
-    {% endif %}
-    <h3>Тренажеры:</h3>
-      <p class='text-muted'>Выберите тренажер: 
-        <ul class="list-group">
-          {% if user.is_authenticated %}
-          <a class="list-group-item list-group-item-light" href="/repeater">Тренажер ЗВУКОВЫСОТНОСТЬ</a>
-          {% else %}
-          <a class="list-group-item list-group-item-light">Тренажер ЗВУКОВЫСОТНОСТЬ</a>
-          {% endif %}
-          <div class="main_block">о тренажере подробнее</div>
-          <div class="hide_block">Развитие чувствительности к высоте звука. Слушайте, повторяйте, смотрите результат.</div>
-          
-          {% if user.is_authenticated %}
-          <a class="list-group-item list-group-item-light" href="/volumer">Тренажер ГРОМКОСТЬ</a>
-          {% else %}
-          <a class="list-group-item list-group-item-light">Тренажер ГРОМКОСТЬ</a>
-          {% endif %}
-          <div class="main_block">о тренажере подробнее</div>
-          <div class="hide_block">Развитие ощущения громкости звука. Слушайте, сравнивайте, выбирайте тот, который громче.</div>
-          
-          {% if user.is_authenticated %}
-          <a class="list-group-item list-group-item-light" href="/wider">Тренажер СТЕРЕОБАЗА</a>
-          {% else %}
-          <a class="list-group-item list-group-item-light">Тренажер СТЕРЕОБАЗА</a>
-          {% endif %}
-          <div class="main_block">о тренажере подробнее</div>
-          <div class="hide_block">Развитие восприятия ширины звуковой картины. Слушайте, сравнивайте, выбирайте тот, который левее.</div>
-          
-          {% if user.is_authenticated %}
-          <a class="list-group-item list-group-item-light" href="/attenter">Тренажер ВНИМАНИЕ</a>
-          {% else %}
-          <a class="list-group-item list-group-item-light">Тренажер ВНИМАНИЕ</a>
-          {% endif %}
-          <div class="main_block">о тренажере подробнее</div>
-          <div class="hide_block">Слушайте, как услышите лишний призвук - двойной клик, либо "Пробел" (на клавиатуре)</div>
-          
-          {% if user.is_authenticated %}
-          <a class="list-group-item list-group-item-light" href="/mixer">Тренажер БАЛАНС</a>
-          {% else %}
-          <a class="list-group-item list-group-item-light">Тренажер БАЛАНС</a>
-          {% endif %}
-          <div class="main_block">о тренажере подробнее</div>
-          <div class="hide_block">Настройте баланс по референсу и проверьте себя, насколько точно Вы смогли это сделать</div>
-          
 
-          {% if user.is_authenticated %}
-          <a class="list-group-item list-group-item-light" href="/intonation">Тренажер ИНТОНАЦИЯ</a>
-          {% else %}
-          <a class="list-group-item list-group-item-light">Тренажер ИНТОНАЦИЯ</a>
-          {% endif %}
-          <div class="main_block">о тренажере подробнее</div>
-          <div class="hide_block">Расширяет представление о музыкальной интонации. Научитесь воспринимать и моделировать множество интонационных вариаций. Звучит сложно, но работает). Лучше один раз попробовать и понять, что за этим кроется.</div>
-          
-          
 
-          
-        </ul>
-      </p>
-      
+    <!-- Start Hero Section
+	================================================== -->
+    <section id="hero" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <div class="lp-element animate" data-animate="fadeInDown">
+                        <h1>SONIC SCHOOL</h1>
+                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                        <p><a class="btn btn-primary btn-lg" role="button">Purchase Now</a> <a class="btn btn-danger btn-lg" role="button">See Gallery</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================================================== 
+	End Hero -->
+
+    <!-- Start Simulators
+	================================================== -->
+    <section id="simulators" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Title -->
+                    <div class="overview animate" data-animate="flipInX">
+                        <h1><strong>SONIC SCHOOL</strong> тренажеры для развития слуха</h1>
+                        <p class="lead">Quickly build prospective best practices vis-a-vis sticky quality vectors. Dynamically plagiarize viral models before installed base functionalities. </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-block animate" data-animate="fadeInRight">
+                        <span class="glyphicon glyphicon-tree-conifer"></span>
+                        <h3>ЗВУКОВЫСОТНОСТЬ</h3>
+                        <p>Развитие чувствительности к высоте звука. Слушайте, повторяйте, смотрите результат.</p>
+                        <button type="button" class="btn btn-primary btn-md btn-rocket btn-rocket-default">НАЧАТЬ</button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-block animate" data-animate="flipInY">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <h3>ГРОМКОСТЬ</h3>
+                        <p>Развитие ощущения громкости звука. Слушайте, сравнивайте, выбирайте тот, который громче.</p>
+                        <button type="button" class="btn btn-primary btn-md btn-rocket btn-rocket-default">НАЧАТЬ</button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-block animate" data-animate="fadeInLeft">
+                        <span class="glyphicon glyphicon-tree-deciduous"></span>
+                        <h3>СТЕРЕОБАЗА</h3>
+                        <p>Восприятия ширины звуковой картины. Слушайте, сравнивайте, выбирайте тот, который левее.</p>
+                        <button type="button" class="btn btn-primary btn-md btn-rocket btn-rocket-default">НАЧАТЬ</button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-block animate" data-animate="fadeInRight">
+                        <span class="glyphicon glyphicon-heart"></span>
+                        <h3>ВНИМАНИЕ</h3>
+                        <p>Слушайте, как услышите лишний призвук - двойной клик, либо "Пробел" (на клавиатуре)</p>
+                        <button type="button" class="btn btn-primary btn-md btn-rocket btn-rocket-default">НАЧАТЬ</button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-block animate" data-animate="flipInX">
+                        <span class="glyphicon glyphicon-scale"></span>
+                        <h3>БАЛАНС</h3>
+                        <p>Настройте баланс по референсу и проверьте себя, насколько точно Вы смогли это сделать</p>
+                        <button type="button" class="btn btn-primary btn-md btn-rocket btn-rocket-default">НАЧАТЬ</button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-block animate" data-animate="flipInY">
+                        <span class="glyphicon glyphicon-paperclip"></span>
+                        <h3>ИНТОНАЦИЯ</h3>
+                        <p>Расширяет представление о музыкальной интонации.</p>
+                        <button type="button" class="btn btn-primary btn-md btn-rocket btn-rocket-default">НАЧАТЬ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+	End Features -->
+
+    <!-- Start Image Block
+	================================================== -->
+    <section id="image" class="section" style="background-color:#FFF; border-top: 1px solid rgba(0, 0, 0, .1);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 sol-sm-12">
+                    <div class="overview animate" data-animate="flipInX">
+                        <h1><strong>Perfect</strong> app landing page</h1>
+                        <p class="lead">Quickly build prospective best practices vis-a-vis sticky quality vectors. Dynamically plagiarize viral models before installed base functionalities. </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12"><img class="animate img-responsive" data-animate="fadeInLeft" src="http://placehold.it/555x416" alt="" /></div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="content-block animate" data-animate="fadeInRight" style="margin-top: 60px;">
+                        <h2>Super Animations</h2>
+                        <p class="lead">Animate.css is a bunch of cool, fun, and cross-browser animations for you.</p>
+                        <hr />
+                        <p><a href="#">Link Text</a> Collaboratively <em>rendered as italicized text</em> envisioneer magnetic schemas through <small>This line of text is meant to be treated as fine print.</small> synergistic technologies. Holisticly seize
+                            professional ideas before wireless metrics. Appropriately drive <strong>rendered as bold text</strong> progressive <abbr title="attribute">attr</abbr> catalysts <abbr title="HyperText Markup Language" class="initialism">HTML</abbr>.</p>
+                        <p><a href="#">Тренажеры,</a> представленные на сайте, способствуют увеличению чувствительности к восприятию поступающей извне звуковой информацию. Ориентированы не только на музыкантов и звукорежиссеров, но и на людей несвязанных
+                            напрямую с аудио-индустрией. Расширяют представления о многообразии окружающих нас звуковых явлений. Позволяют усовершенствовать внутренние механизмы концентрации на нужных звуках и извлекать из них информацию. После некоторого
+                            периода практики, каждый заметит, что стал улавливать то, на что раньше не обращал внимания, на то, что проходило мимо ушей, не замечалось и не фиксировалось.</p>
+
+                        <button class="btn btn-md btn-primary">Learn More</button>
+                        <button class="btn btn-md btn-default">Purchase Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+	End Image Blcok -->
+
+    <!-- Start Gallery Block
+	================================================== -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 sol-sm-12">
+                    <div class="overview animate" data-animate="flipInY">
+                        <h1><strong>Beautiful</strong> Ui Design</h1>
+                        <p class="lead">Quickly build prospective best practices vis-a-vis sticky quality vectors. Dynamically plagiarize viral models before installed base functionalities. </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="http://placehold.it/400x300" title="This is the description">
+                        <img src="http://placehold.it/400x300" alt="Turtle" class="img-rounded image-responsive animate" data-animate="fadeIn">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+	End Gallery Blcok -->
+
+    <!-- Start Text Block
+	================================================== -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 sol-sm-12">
+                    <div class="overview animate" data-animate="flipInY">
+                        <h1>Frequently Asked Questions</h1>
+                        <p class="lead">Quickly build prospective best practices vis-a-vis sticky quality vectors. Dynamically plagiarize viral models before installed base functionalities. </p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <img class="animate img-responsive" data-animate="fadeInLeft" src="http://placehold.it/1170x484" alt="" style="margin-bottom: 50px;" />
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="faq-block animate" data-animate="fadeInLeft">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+						          Anim pariatur cliche reprehenderit, enim eiusmod ?
+						        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        Food truck quinoa nesciunt laborum eiusmod. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                        dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+						          Food truck quinoa nesciunt laborum eiusmod ?
+						        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                        on it squid single-origin coffee nulla assumenda shoreditch et.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+						           Widtholf moon officia aute?
+						        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+						           Moon officia aute, non cupidatat skateboard dolor brunch?
+						        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+						           Pariatur cliche reprehenderit, enim eiusmod high?
+						        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFive" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+	End Text Blcok -->
+
+    <!-- Start Newsletter Block
+	================================================== -->
+    <section id="slider" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="Carousel" class="carousel slide">
+                        <ol class="carousel-indicators">
+                            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#Carousel" data-slide-to="1"></li>
+                            <li data-target="#Carousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <div class="carousel-inner">
+                            <div class="item active animate" data-animate="flipInY">
+                                <blockquote>
+                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                    <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                                </blockquote>
+                            </div>
+                            <div class="item animate" data-animate="flipInY">
+                                <blockquote>
+                                    <p class="lead">Bootstrap has a few easy ways to quickly get started, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.</p>
+                                    <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                                </blockquote>
+                            </div>
+                            <div class="item animate" data-animate="flipInY">
+                                <blockquote>
+                                    <p class="lead">Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one.</p>
+                                    <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <a class="left carousel-control" href="#Carousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#Carousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+	End Slider Blcok -->
+
+    <!-- Start Newsletter Block
+	================================================== -->
+    <section id="newsletter" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="overview animate" data-animate="fadeInDown">
+                        <h1><strong>Subscribe Newsletter</strong></h1>
+                        <p class="lead">Join thousands of awesome people, there's only one thing to do. Subscribe !</p>
+                    </div>
+                    <form role="form" class="animate" data-animate="fadeInUp">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-lg" placeholder="Enter email">
+                            <span class="input-group-btn">
+			              		<button class="btn btn-lg btn-default" type="button">Subscribe Me</button>
+			            	</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+	End Newsletter Blcok -->
+
+
+
+
 {% endblock content %}
 
 {% block scripts %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 
-  <script>
-    $(document).ready(function () {
-        
-    $(".main_block").click(function () {
-        // все закрываем
-        // $(".hide_block").slideUp(200);
-        // следующий открываем
-        $(this).prevAll('.hide_block').slideUp(200);
-        $(this).next('.hide_block').slideToggle(200);
-        }); //click           
-    }); // end ready
-  </script>
+  <!-- Bootstrap core JavaScript
+	================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="{% static 'assets/js/jquery-1.10.2.min.js' %}"></script> -->
+    <script src="{% static 'gyms/assets/js/bootstrap.js' %}"></script>
+    <script src="{% static 'gyms/assets/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'gyms/assets/js/jquery.scrollto.min.js' %}"></script>
+    <script src="{% static 'gyms/assets/js/jquery.localscroll.min.js' %}"></script>
+    <script src="{% static 'gyms/assets/js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'gyms/assets/js/scripts.js' %}"></script>
 
-
+  
+    <!-- ********************* -->
+    <!-- Start Rocket -->
 {% endblock scripts %}
-
