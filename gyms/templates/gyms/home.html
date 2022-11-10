@@ -148,7 +148,8 @@
                     <p>Настройте баланс по референсу и проверьте себя, насколько точно Вы смогли это сделать</p>
                     {% if user.is_authenticated %}
                     <a class="btn btn-primary btn-md btn-rocket btn-rocket-default" href="/mixer">НАЧАТЬ</a> {% else %}
-                    <a class="btn btn-primary btn-md btn-rocket btn-rocket-default">АВТОРИЗУЙТЕСЬ</a> {% endif %}
+                    <a class="btn btn-primary btn-md btn-rocket btn-rocket-default" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Сначала авторизуйтесь" style = 'cursor: not-allowed'>НАЧАТЬ</a> {% endif %}
+                    <!-- data-bs-toggle="tooltip" title="Текст всплывающей подсказки!" -->
 
                 </div>
             </div>
@@ -191,8 +192,8 @@
                     <h2>Super Animations</h2>
                     <p class="lead">Animate.css is a bunch of cool, fun, and cross-browser animations for you.</p>
                     <hr />
-                    <!-- <p><a href="#">Link Text</a> Collaboratively <em>rendered as italicized text</em> envisioneer magnetic schemas through <small>This line of text is meant to be treated as fine print.</small> synergistic technologies. Holisticly seize professional
-                        ideas before wireless metrics. Appropriately drive <strong>rendered as bold text</strong> progressive <abbr title="attribute">attr</abbr> catalysts <abbr title="HyperText Markup Language" class="initialism">HTML</abbr>.</p> -->
+                    <p><a href="#">Link Text</a> Collaboratively <em>rendered as italicized text</em> envisioneer magnetic schemas through <small>This line of text is meant to be treated as fine print.</small> synergistic technologies. Holisticly seize professional
+                        ideas before wireless metrics. Appropriately drive <strong>rendered as bold text</strong> progressive <abbr title="attribute">attr</abbr> catalysts <abbr title="HyperText Markup Language" class="initialism">HTML</abbr>.</p>
                     <p><a href="#">Тренажеры,</a> представленные на сайте, способствуют увеличению чувствительности к восприятию поступающей извне звуковой информацию. Ориентированы не только на музыкантов и звукорежиссеров, но и на людей несвязанных напрямую
                         с аудио-индустрией. Расширяют представления о многообразии окружающих нас звуковых явлений. Позволяют усовершенствовать внутренние механизмы концентрации на нужных звуках и извлекать из них информацию. После некоторого периода
                         практики, каждый заметит, что стал улавливать то, на что раньше не обращал внимания, на то, что проходило мимо ушей, не замечалось и не фиксировалось.</p>
